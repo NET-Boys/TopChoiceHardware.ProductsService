@@ -24,21 +24,11 @@ namespace TopChoiceHardware.ProductsService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TopChoiceHardware.ProductsService", Version = "v1" });
             });
-            var connectionString = Configuration.GetSection("ConnectionString").Value;
-            services.AddDbContext<ProductosContext>(options => options.UseSqlServer(connectionString));
-            services.AddTransient<IGenericRepository, GenericRepository>();
-            services.AddTransient<IProductoService, ProductoService>();
-            services.AddTransient<ICategoriaService, CategoriaService>();
-            services.AddTransient<IProveedorService, ProveedorService>();
-
             //CORS, Permite cualquier origen
             services.AddCors(c =>
             {
@@ -47,6 +37,12 @@ namespace TopChoiceHardware.ProductsService
                                                             .AllowAnyMethod()
                                                             .AllowAnyHeader());
             });
+            var connectionString = Configuration.GetSection("ConnectionString").Value;
+            services.AddDbContext<ProductosContext>(options => options.UseSqlServer(connectionString));
+            services.AddTransient<IGenericRepository, GenericRepository>();
+            services.AddTransient<IProductoService, ProductoService>();
+            services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<IProveedorService, ProveedorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +54,10 @@ namespace TopChoiceHardware.ProductsService
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TopChoiceHardware.ProductsService v1"));
             }
+            //CORS, Permite cualquier origen
+            app.UseCors(options => options.AllowAnyOrigin()
+                                          .AllowAnyHeader()
+                                          .AllowAnyHeader());
 
             //app.UseHttpsRedirection();
 
@@ -69,12 +69,6 @@ namespace TopChoiceHardware.ProductsService
             {
                 endpoints.MapControllers();
             });
-
-
-            //CORS, Permite cualquier origen
-            app.UseCors(options => options.AllowAnyOrigin()
-                                          .AllowAnyHeader()
-                                          .AllowAnyHeader());
         }
     }
 }

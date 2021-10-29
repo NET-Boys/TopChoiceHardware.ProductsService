@@ -51,9 +51,39 @@ namespace TopChoiceHardware.ProductsService.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpGet("PriceSortedAsc")]
+        public IActionResult GetAllProductsPriceSortedAsc()
+        {
+            try
+            {
+                var productos = _service.GetProductos();
+                productos.Sort((x, y) => x.UnitPrice.CompareTo(y.UnitPrice));
+                return Ok(productos);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpGet("PriceSortedDesc")]
+        public IActionResult GetAllProductsPriceSortedDesc()
+        {
+            try
+            {
+                var productos = _service.GetProductos();
+                productos.Sort((x, y) => y.UnitPrice.CompareTo(x.UnitPrice));
+                return Ok(productos);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
         [HttpGet("{id}")]
-        public IActionResult GetUserById(int id)
+        public IActionResult GetProductById(int id)
         {
             try
             {

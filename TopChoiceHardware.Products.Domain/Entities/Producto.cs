@@ -16,6 +16,8 @@ namespace TopChoiceHardware.Products.Domain.Entities
         public int UnitsInStock { get; set; }
         public string Brand { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
+        public string Url { get; set; }
 
         public virtual Categoria Category { get; set; }
         public virtual Proveedor Supplier { get; set; }

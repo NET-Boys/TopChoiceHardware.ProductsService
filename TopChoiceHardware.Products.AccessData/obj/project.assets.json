@@ -5838,11 +5838,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.AccessData\\TopChoiceHardware.Products.AccessData.csproj",
+      "projectUniqueName": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.AccessData\\TopChoiceHardware.Products.AccessData.csproj",
       "projectName": "TopChoiceHardware.Products.AccessData",
-      "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.AccessData\\TopChoiceHardware.Products.AccessData.csproj",
+      "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.AccessData\\TopChoiceHardware.Products.AccessData.csproj",
       "packagesPath": "C:\\Users\\Jose Luis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.AccessData\\obj\\",
+      "outputPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.AccessData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5863,11 +5863,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Application\\TopChoiceHardware.Products.Application.csproj": {
-              "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Application\\TopChoiceHardware.Products.Application.csproj"
+            "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Application\\TopChoiceHardware.Products.Application.csproj": {
+              "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Application\\TopChoiceHardware.Products.Application.csproj"
             },
-            "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj": {
-              "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj"
+            "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj": {
+              "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj"
             }
           }
         }

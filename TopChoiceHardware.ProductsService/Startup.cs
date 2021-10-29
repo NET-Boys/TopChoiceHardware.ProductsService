@@ -1,17 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TopChoiceHardware.Products.AccessData;
 using TopChoiceHardware.Products.AccessData.Commands;
 using TopChoiceHardware.Products.Application.Services;
@@ -32,6 +25,8 @@ namespace TopChoiceHardware.ProductsService
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -43,6 +38,15 @@ namespace TopChoiceHardware.ProductsService
             services.AddTransient<IProductoService, ProductoService>();
             services.AddTransient<ICategoriaService, CategoriaService>();
             services.AddTransient<IProveedorService, ProveedorService>();
+
+            //CORS, Permite cualquier origen
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options
+                                                            .AllowAnyOrigin()
+                                                            .AllowAnyMethod()
+                                                            .AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,16 +59,22 @@ namespace TopChoiceHardware.ProductsService
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TopChoiceHardware.ProductsService v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+
+            //CORS, Permite cualquier origen
+            app.UseCors(options => options.AllowAnyOrigin()
+                                          .AllowAnyHeader()
+                                          .AllowAnyHeader());
         }
     }
 }

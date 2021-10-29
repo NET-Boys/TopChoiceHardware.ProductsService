@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = TopChoiceHardware.Products.AccessData
-build_property.ProjectDir = C:\Users\Jose Luis\Google Drive\Doc-Universidad\Proyecto Software\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.AccessData\
+build_property.ProjectDir = C:\Users\Jose Luis\Google Drive\Doc-Universidad\Proyecto Software\TopChoiceHardware\Microservicio Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.AccessData\

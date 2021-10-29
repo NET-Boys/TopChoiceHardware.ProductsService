@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oQtwPlihe76ePrJqmL+o72lW5oIaU4oCN67+Gv7++BYkG8NIe12iqmVKAAJbiGRxQiiEuZSaKbOgT7gbGUtsjQ==",
+  "dgSpecHash": "1DR7AAGuZSFKRQmkC4UNVquxEACgk35JNMz+MwMmm18xfEsMxJWpCaiq6zlMa7N5K1ETVDFvG/b8rq9j3T8Cog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Application\\TopChoiceHardware.Products.Application.csproj",
+  "projectFilePath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Application\\TopChoiceHardware.Products.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jose Luis\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jose Luis\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -15,5 +15,7 @@ namespace TopChoiceHardware.Products.Domain.DTOs
         public int UnitsInStock { get; set; }
         public string Brand { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
+        public string Url { get; set; }
     }
 }

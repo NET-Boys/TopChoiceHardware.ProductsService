@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TopChoiceHardware.Products.Domain.Entities
 {
-    public class Proveedor
+    public class Supplier
     {
-        public Proveedor()
+        public Supplier()
         {
-            Productos = new HashSet<Producto>();
+            Products = new HashSet<Product>();
         }
 
         public int SupplierId { get; set; }
@@ -19,6 +19,6 @@ namespace TopChoiceHardware.Products.Domain.Entities
         public string Phone { get; set; }
         public int AddressId { get; set; }
 
-        public virtual ICollection<Producto> Productos { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

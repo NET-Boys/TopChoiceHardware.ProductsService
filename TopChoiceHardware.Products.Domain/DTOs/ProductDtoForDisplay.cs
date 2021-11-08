@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TopChoiceHardware.Products.Domain.Entities
+namespace TopChoiceHardware.Products.Domain.DTOs
 {
-    public class Producto
+    class ProductDtoForDisplay
     {
-        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int CategoryId { get; set; }
         public int SupplierId { get; set; }
@@ -18,8 +17,5 @@ namespace TopChoiceHardware.Products.Domain.Entities
         public string Description { get; set; }
         public string Image { get; set; }
         public string Url { get; set; }
-
-        public virtual Categoria Category { get; set; }
-        public virtual Proveedor Supplier { get; set; }
     }
 }

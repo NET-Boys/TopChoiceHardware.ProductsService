@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TopChoiceHardware.Products.Domain.DTOs
 {
-    public class CategoriaDto
+    public class CategoryDto
     {
         public string CategoryName { get; set; }
         public string Description { get; set; }

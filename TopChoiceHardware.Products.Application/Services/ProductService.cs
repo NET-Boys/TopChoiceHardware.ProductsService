@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TopChoiceHardware.Products.Domain.Commands;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
 
 namespace TopChoiceHardware.Products.Application.Services
 {
-    public interface IProductoService
+    public interface IProductService
     {
-        Producto CreateProducto(ProductoDto producto);
-        List<Producto> GetProductos();
-        Producto GetProductoById(int id);
+        Product CreateProduct(ProductDtoForCreation producto);
+        List<Product> GetProductos();
+        Product GetProductoById(int id);
+        void UpdateProduct(Product product);
     }
-    public class ProductoService : IProductoService
+    public class ProductService : IProductService
     {
         private IGenericRepository _repository;
 
-        public ProductoService(IGenericRepository repository)
+        public ProductService(IGenericRepository repository)
         {
             _repository = repository;
         }
 
-        public Producto CreateProducto(ProductoDto producto)
+        public Product CreateProduct(ProductDtoForCreation producto)
         {
-            var entity = new Producto
+            var entity = new Product
             {
                 ProductName = producto.ProductName,
                 CategoryId = producto.CategoryId,
@@ -40,15 +37,19 @@ namespace TopChoiceHardware.Products.Application.Services
             _repository.Add(entity);
             return entity;
         }
-
-        public Producto GetProductoById(int id)
+        public void UpdateProduct(Product product)
         {
-            return _repository.GetById<Producto>(id);
+            _repository.Update(product);
         }
 
-        public List<Producto> GetProductos()
+        public Product GetProductoById(int id)
         {
-            return _repository.GetAll<Producto>();
+            return _repository.GetById<Product>(id);
+        }
+
+        public List<Product> GetProductos()
+        {
+            return _repository.GetAll<Product>();
         }
     }
 }

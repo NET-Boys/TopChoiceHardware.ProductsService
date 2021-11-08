@@ -14,20 +14,20 @@ namespace TopChoiceHardware.ProductsService.Controllers
     [ApiController]
     public class SupplierController : ControllerBase
     {
-        private readonly IProveedorService _service;
+        private readonly ISupplierService _service;
 
-        public SupplierController(IProveedorService service)
+        public SupplierController(ISupplierService service)
         {
             _service = service;
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(Proveedor), StatusCodes.Status201Created)]
-        public IActionResult Post(ProveedorDto proveedor)
+        [ProducesResponseType(typeof(Supplier), StatusCodes.Status201Created)]
+        public IActionResult Post(SupplierDto proveedor)
         {
             try
             {
-                return new JsonResult(_service.CreateProveedor(proveedor)) { StatusCode = 201 };
+                return new JsonResult(_service.CreateSupplier(proveedor)) { StatusCode = 201 };
             }
             catch (Exception e)
             {
@@ -41,7 +41,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var proveedores = _service.GetProveedores();
+                var proveedores = _service.GetSuppliers();
 
                 return Ok(proveedores);
             }
@@ -57,7 +57,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var proveedor = _service.GetProveedorById(id);
+                var proveedor = _service.GetSupplierById(id);
                 if (proveedor == null)
                 {
                     return NotFound();

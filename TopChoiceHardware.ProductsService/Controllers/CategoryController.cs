@@ -22,8 +22,8 @@ namespace TopChoiceHardware.ProductsService.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(Categoria), StatusCodes.Status201Created)]
-        public IActionResult Post(CategoriaDto categoria)
+        [ProducesResponseType(typeof(Category), StatusCodes.Status201Created)]
+        public IActionResult Post(CategoryDto categoria)
         {
             try
             {

@@ -9,24 +9,24 @@ using TopChoiceHardware.Products.Domain.Entities;
 
 namespace TopChoiceHardware.Products.Application.Services
 {
-    public interface IProveedorService
+    public interface ISupplierService
     {
-        Proveedor CreateProveedor(ProveedorDto proveedor);
-        List<Proveedor> GetProveedores();
-        Proveedor GetProveedorById(int id);
+        Supplier CreateSupplier(SupplierDto proveedor);
+        List<Supplier> GetSuppliers();
+        Supplier GetSupplierById(int id);
     }
-    public class ProveedorService : IProveedorService
+    public class SupplierService : ISupplierService
     {
         private IGenericRepository _repository;
 
-        public ProveedorService(IGenericRepository repository)
+        public SupplierService(IGenericRepository repository)
         {
             _repository = repository;
         }
 
-        public Proveedor CreateProveedor(ProveedorDto proveedor)
+        public Supplier CreateSupplier(SupplierDto proveedor)
         {
-            var entity = new Proveedor
+            var entity = new Supplier
             {
                 CompanyName = proveedor.CompanyName,
                 Email = proveedor.Email,
@@ -38,14 +38,14 @@ namespace TopChoiceHardware.Products.Application.Services
             return entity;
         }
 
-        public Proveedor GetProveedorById(int id)
+        public Supplier GetSupplierById(int id)
         {
-            return _repository.GetById<Proveedor>(id);
+            return _repository.GetById<Supplier>(id);
         }
 
-        public List<Proveedor> GetProveedores()
+        public List<Supplier> GetSuppliers()
         {
-            return _repository.GetAll<Proveedor>();
+            return _repository.GetAll<Supplier>();
         }
     }
 }

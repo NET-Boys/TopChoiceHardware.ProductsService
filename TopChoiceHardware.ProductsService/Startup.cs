@@ -29,6 +29,7 @@ namespace TopChoiceHardware.ProductsService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TopChoiceHardware.ProductsService", Version = "v1" });
             });
+            services.AddAutoMapper(typeof(Startup));
             //CORS, Permite cualquier origen
             services.AddCors(c =>
             {
@@ -40,9 +41,10 @@ namespace TopChoiceHardware.ProductsService
             var connectionString = Configuration.GetSection("ConnectionString").Value;
             services.AddDbContext<ProductosContext>(options => options.UseSqlServer(connectionString));
             services.AddTransient<IGenericRepository, GenericRepository>();
-            services.AddTransient<IProductoService, ProductoService>();
-            services.AddTransient<ICategoriaService, CategoriaService>();
-            services.AddTransient<IProveedorService, ProveedorService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoriaService, CategoryService>();
+            services.AddTransient<ISupplierService, SupplierService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

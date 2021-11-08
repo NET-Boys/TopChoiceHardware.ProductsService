@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace TopChoiceHardware.Products.Domain.Entities
 {
-    public class Categoria
+    public class Category
     {
-        public Categoria()
+        public Category()
         {
-            Productos = new HashSet<Producto>();
+            Productos = new HashSet<Product>();
         }
 
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
 
-        public virtual ICollection<Producto> Productos { get; set; }
+        public virtual ICollection<Product> Productos { get; set; }
     }
 }

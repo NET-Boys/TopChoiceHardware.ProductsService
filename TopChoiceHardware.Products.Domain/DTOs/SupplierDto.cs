@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TopChoiceHardware.Products.Domain.DTOs
 {
-    public class ProveedorDto
+    public class SupplierDto
     {
         public string CompanyName { get; set; }
         public string Email { get; set; }

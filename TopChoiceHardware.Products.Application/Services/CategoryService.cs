@@ -11,22 +11,22 @@ namespace TopChoiceHardware.Products.Application.Services
 {
     public interface ICategoriaService
     {
-        Categoria CreateCategoria(CategoriaDto categoria);
-        List<Categoria> GetCategorias();
-        Categoria GetCategoriaById(int id);
+        Category CreateCategoria(CategoryDto categoria);
+        List<Category> GetCategorias();
+        Category GetCategoriaById(int id);
     }
-    public class CategoriaService : ICategoriaService
+    public class CategoryService : ICategoriaService
     {
         private IGenericRepository _repository;
 
-        public CategoriaService(IGenericRepository repository)
+        public CategoryService(IGenericRepository repository)
         {
             _repository = repository;
         }
 
-        public Categoria CreateCategoria(CategoriaDto categoria)
+        public Category CreateCategoria(CategoryDto categoria)
         {
-            var entity = new Categoria
+            var entity = new Category
             {
                 CategoryName = categoria.CategoryName,
                 Description = categoria.Description
@@ -36,14 +36,14 @@ namespace TopChoiceHardware.Products.Application.Services
             return entity;
         }
 
-        public Categoria GetCategoriaById(int id)
+        public Category GetCategoriaById(int id)
         {
-            return _repository.GetById<Categoria>(id);
+            return _repository.GetById<Category>(id);
         }
 
-        public List<Categoria> GetCategorias()
+        public List<Category> GetCategorias()
         {
-            return _repository.GetAll<Categoria>();
+            return _repository.GetAll<Category>();
         }
     }
 }

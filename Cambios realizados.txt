@@ -1,7 +1,0 @@
-¿Borrar los get sorted by price ASC y desc. Tener 1 solo get y ordenarlo con query params en el JS?
-
-Ahora se maneja por repositorios especificos y no por el repositorio generico
-Las tablas en DB ahora se llaman: product, supplier, category
-Se agrego el atributo booleano Onsale a los productos
-
-¿la traduccion es categories no? lpm

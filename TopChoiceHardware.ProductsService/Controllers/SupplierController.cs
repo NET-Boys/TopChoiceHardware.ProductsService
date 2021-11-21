@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     public class SupplierController : ControllerBase
     {
         private readonly ISupplierService _service;
@@ -41,7 +43,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var proveedores = _service.GetSuppliers();
+                var proveedores = _service.GetAllSuppliers();
 
                 return Ok(proveedores);
             }

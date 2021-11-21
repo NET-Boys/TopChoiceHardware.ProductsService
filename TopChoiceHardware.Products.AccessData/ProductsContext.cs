@@ -3,11 +3,11 @@ using TopChoiceHardware.Products.Domain.Entities;
 
 namespace TopChoiceHardware.Products.AccessData
 {
-    public class ProductosContext : DbContext
+    public class ProductsContext : DbContext
     {
-        public ProductosContext() { }
+        public ProductsContext() { }
 
-        public ProductosContext(DbContextOptions<ProductosContext> options) : base(options) { }
+        public ProductsContext(DbContextOptions<ProductsContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -58,6 +58,19 @@ namespace TopChoiceHardware.Products.AccessData
                     .HasForeignKey(d => d.SupplierId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Productos__Suppl__2D27B809");
+                entity.HasMany(t => t.Images)
+                    .WithOne(t => t.Product)
+                    .HasForeignKey(t => t.ProductId)
+                    .OnDelete(DeleteBehavior.ClientCascade)
+                    .HasConstraintName("FK__Products__Image");
+            });
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.HasKey(e => e.ImageId);
+
+                entity.Property(e => e.ImageId).ValueGeneratedOnAdd();
+                
+                entity.Property(e => e.Url).IsRequired();
             });
 
             modelBuilder.Entity<Supplier>(entity =>
@@ -149,9 +162,10 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 10,
                     Brand = "AMD",
                     Description = "Todos los procesadores AMD Ryzen serie 5000 cuentan con un conjunto completo de tecnologías diseñadas para elevar la potencia de procesamiento de tu PC, incluidas Precision Boost 25, Precision Boost Overdrive, PCIe 4.0 (en procesadores seleccionados) y Resizable BAR.",
-                    Image = "https://i.imgur.com/O1EfiHW.png",
-                    Url = "https://www.amd.com/es/products/apu/amd-ryzen-7-5700g"
-                },
+                    Url = "https://www.amd.com/es/products/apu/amd-ryzen-7-5700g",
+                    OnSale=false                    
+                }
+                /*,
                 new Product
                 {
                     ProductId = 2,
@@ -162,7 +176,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 5,
                     Brand = "INTEL",
                     Description = "Los procesadores para desktop Intel Core de 10 Generación, que cuentan con hasta 5,3 GHz, tecnología Intel Thermal Velocity Boost (Intel TVB), 20 MB de caché inteligente Intel y conexión Intel Ethernet I225 ofrecen a los jugadores y a los profesionales creativos importantes ventajas de desempeño.",
-                    Image = "https://i.imgur.com/1cDE1v4.png?1",
+                    Images = { "https://i.imgur.com/1cDE1v4.png?1"},
                     Url = "https://ark.intel.com/content/www/es/es/ark/products/199315/intel-core-i5-10600kf-processor-12m-cache-up-to-4-80-ghz.html"
                 },
                 new Product
@@ -175,7 +189,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 5,
                     Brand = "INTEL",
                     Description = "Experimente un rendimiento increíble en videojuegos, edite y comparta con fluidez vídeo en 360 grados y disfrute de entretenimiento 4K Ultra HD fantástico, y todo con unas transferencias de datos a la velocidad de la luz que ofrece la tecnología Thunderbolt™ 3.",
-                    Image = "https://i.imgur.com/EFy8fOT.png",
+                    Images = {"https://i.imgur.com/EFy8fOT.png" },
                     Url = "https://ark.intel.com/content/www/es/es/ark/products/193738/intel-core-i7-9700f-processor-12m-cache-up-to-4-70-ghz.html"
                 },
                 new Product
@@ -188,7 +202,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 10,
                     Brand = "AMD",
                     Description = "Cuando cuentas con la arquitectura de procesadores más avanzada del mundo para jugadores y creadores de contenido, las posibilidades son infinitas.Ya sea que juegues los juegos más recientes, diseñes el próximo rascacielos o proceses datos, necesitas un procesador poderoso que pueda dar respuesta.",
-                    Image = "https://i.imgur.com/BI7uFjv.png",
+                    Images = {"https://i.imgur.com/BI7uFjv.png" },
                     Url = "https://www.amd.com/es/products/apu/amd-ryzen-5-5600g"
                 },
                 new Product
@@ -201,7 +215,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 5,
                     Brand = "INTEL",
                     Description = "Procesador Intel® Core™ de 10ma Generación equipado con los gráficos Intel. Estos procesadores ofrecen un nuevo nivel de integración que permite potenciar las experiencias de uso de computadoras en la actualidad y en el futuro.",
-                    Image = "https://i.imgur.com/HlWiLZf.png",
+                    Images = {"https://i.imgur.com/HlWiLZf.png" },
                     Url = "https://www.intel.la/content/www/xl/es/products/sku/199283/intel-core-i310100-processor-6m-cache-up-to-4-30-ghz/specifications.html"
                 },
                 new Product
@@ -214,7 +228,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 10,
                     Brand = "AMD",
                     Description = "Sumergíte en la tecnología líder para gráficas con la arquitectura Graphics Core Next (GCN) de AMD. Esta tecnología de tercera generación activa las prestaciones avanzadas y el increíble rendimiento de las gráficas AMD Radeon",
-                    Image = "https://i.imgur.com/GJk8cpx.png",
+                    Images = { "https://i.imgur.com/GJk8cpx.png"},
                     Url = "https://www.amd.com/es/products/apu/7th-gen-a6-9500-apu"
                 },
                 //Mothers
@@ -228,7 +242,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 10,
                     Brand = "Asrock",
                     Description = "Soporta Socket AMD AM4 Ryzen™ 2000, 3000, 4000 G-Series, 5000 y 5000 G-Series Desktop Processors 2 DIMMs, Soporta memoria DDR4 3200 + (OC)",
-                    Image = "https://i.imgur.com/kgyIGNT.png",
+                    Images = { "https://i.imgur.com/kgyIGNT.png"},
                     Url = "https://www.asrock.com/mb/AMD/B450M-HDV%20R4.0/index.la.asp#Specification"
                 },
                  new Product
@@ -241,7 +255,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "AORUS",
                      Description = "Supports AMD Ryzen™ 5000 Series / Ryzen™ 5000 G - Series / Ryzen™ 4000 G - Series and Ryzen™ 3000 Series Processors Dual Channel ECC / Non - ECC Unbuffered DDR4, 4 DIMMs",
-                     Image = "https://i.imgur.com/yjl0knB.png",
+                     Images = { "https://i.imgur.com/yjl0knB.png"},
                      Url = "https://www.gigabyte.com/ar/Motherboard/B550-AORUS-ELITE-AX-V2-rev-10#kf"
                  },
                  new Product
@@ -254,7 +268,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "Asus TUF",
                      Description = "Socket AMD AM4: Listo para los procesadores AMD RyzenTM de 2da y 3ra generación. 4 x DIMM, Max. 128GB, DDR4 4400(O.C)/3466(O.C.)/3400(O.C.)/3200(O.C.)/3000(O.C.)/2933(O.C.)/2800(O.C.)/2666/2400/2133",
-                     Image = "https://i.imgur.com/4nmN1jo.png",
+                     Images = { "https://i.imgur.com/4nmN1jo.png"},
                      Url = "https://www.asus.com/latin/Motherboards-Components/Motherboards/TUF-Gaming/TUF-GAMING-X570-PLUS-WI-FI/"
                  },
                  new Product
@@ -267,7 +281,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "MSI",
                      Description = "AMD Socket AM4 , AMD® A320 Chipset, Supports DDR4 1866/ 2133/ 2400/ 2667/ 2800/ 2933/ 3000/ 3066/ 3200 MHz",
-                     Image = "https://i.imgur.com/SoVh1gC.png",
+                     Images = {"https://i.imgur.com/SoVh1gC.png" },
                      Url = "https://www.msi.com/Motherboard/A320M-PRO-VH"
                  },
                  new Product
@@ -280,7 +294,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "Kingston",
                      Description = "Capacidad de 4 GB, velocidad de 3200 MHz, tecnología  DDR4.",
-                     Image = "https://i.imgur.com/5Qx2cpJ.png",
+                     Images = {"https://i.imgur.com/5Qx2cpJ.png" },
                      Url = ""
                  },
                  new Product
@@ -293,13 +307,31 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "Hikvision",
                      Description = "Capacidad de 16 GB, velocidad de 2666 MHz, tecnología  DDR4.",
-                     Image = "https://i.imgur.com/8xl51WL.png",
+                     Images = { "https://i.imgur.com/8xl51WL.png"},
                      Url = ""
-                 }
+                 }*/
+                
                 );
+            modelBuilder.Entity<Image>(e =>
+            {
+                e.HasData(new Image
+                {
+                    ImageId = 1,
+                    Url = "https://i.imgur.com/O1EfiHW.png",
+                    ProductId = 1,
+                }); //Imagen 1 Ryzen 7 5700G
+                e.HasData(new Image
+                {
+                    ImageId = 2,
+                    Url = "https://i.imgur.com/cRSZLrc.png",
+                    ProductId = 1,
+                }); //Imagen 2 Ryzen 7 5700G
+            }
+            );
         }
-        public virtual DbSet<Category> Categorias { get; set; }
-        public virtual DbSet<Product> Productos { get; set; }
-        public virtual DbSet<Supplier> Proveedores { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Supplier> Supplier { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
     }
 }

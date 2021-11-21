@@ -9,41 +9,40 @@ using TopChoiceHardware.Products.Domain.Entities;
 
 namespace TopChoiceHardware.Products.Application.Services
 {
-    public interface ICategoriaService
+    public interface ICategoryService
     {
-        Category CreateCategoria(CategoryDto categoria);
-        List<Category> GetCategorias();
-        Category GetCategoriaById(int id);
+        Category CreateCategory(CategoryDto categoria);
+        List<Category> GetAllCategorys();
+        Category GetCategoryById(int id);
     }
-    public class CategoryService : ICategoriaService
+    public class CategoryService : ICategoryService
     {
-        private IGenericRepository _repository;
+        private ICategoryRepository _repository;
 
-        public CategoryService(IGenericRepository repository)
+        public CategoryService(ICategoryRepository repository)
         {
             _repository = repository;
         }
 
-        public Category CreateCategoria(CategoryDto categoria)
+        public Category CreateCategory(CategoryDto category)
         {
             var entity = new Category
             {
-                CategoryName = categoria.CategoryName,
-                Description = categoria.Description
+                CategoryName = category.CategoryName,
+                Description = category.Description
             };
 
             _repository.Add(entity);
             return entity;
         }
 
-        public Category GetCategoriaById(int id)
+        public Category GetCategoryById(int id)
         {
-            return _repository.GetById<Category>(id);
+            return _repository.GetCategoryById(id);
         }
-
-        public List<Category> GetCategorias()
+        public List<Category> GetAllCategorys()
         {
-            return _repository.GetAll<Category>();
+            return _repository.GetAllCategorys();
         }
     }
 }

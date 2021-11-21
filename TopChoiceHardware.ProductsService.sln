@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopChoiceHardware.ProductsService", "TopChoiceHardware.ProductsService\TopChoiceHardware.ProductsService.csproj", "{489581B7-FD3F-4001-943B-0E1D8DD2EFBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopChoiceHardware.ProductsService", "TopChoiceHardware.ProductsService\TopChoiceHardware.ProductsService.csproj", "{489581B7-FD3F-4001-943B-0E1D8DD2EFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopChoiceHardware.Products.Application", "TopChoiceHardware.Products.Application\TopChoiceHardware.Products.Application.csproj", "{EF888321-51A4-4A91-90D2-FA054828DB92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopChoiceHardware.Products.Application", "TopChoiceHardware.Products.Application\TopChoiceHardware.Products.Application.csproj", "{EF888321-51A4-4A91-90D2-FA054828DB92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopChoiceHardware.Products.Domain", "TopChoiceHardware.Products.Domain\TopChoiceHardware.Products.Domain.csproj", "{304978AC-7E88-4139-8F57-F1CD20A27066}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopChoiceHardware.Products.Domain", "TopChoiceHardware.Products.Domain\TopChoiceHardware.Products.Domain.csproj", "{304978AC-7E88-4139-8F57-F1CD20A27066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopChoiceHardware.Products.AccessData", "TopChoiceHardware.Products.AccessData\TopChoiceHardware.Products.AccessData.csproj", "{9DDA25A2-BC74-4B67-BA9D-D845B8E9F856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopChoiceHardware.Products.AccessData", "TopChoiceHardware.Products.AccessData\TopChoiceHardware.Products.AccessData.csproj", "{9DDA25A2-BC74-4B67-BA9D-D845B8E9F856}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

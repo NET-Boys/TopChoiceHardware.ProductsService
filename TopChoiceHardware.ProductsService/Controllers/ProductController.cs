@@ -8,16 +8,17 @@ using System.Threading.Tasks;
 using TopChoiceHardware.Products.Application.Services;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TopChoiceHardware.ProductsService.Controllers
 {
     [Route("api/products")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _service;
         private readonly IMapper _mapper;
-
         public ProductController(IProductService service, IMapper mapper)
         {
             _service = service;
@@ -31,6 +32,8 @@ namespace TopChoiceHardware.ProductsService.Controllers
             try
             {
                 return new JsonResult(_service.CreateProduct(producto)) { StatusCode = 201 };
+
+                //Agregar lo de images
             }
             catch (Exception e)
             {
@@ -44,7 +47,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var productos = _service.GetProductos();
+                var productos = _service.GetAllProductDtoForDisplay();
 
                 return Ok(productos);
             }
@@ -59,7 +62,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var productos = _service.GetProductos();
+                var productos = _service.GetAllProducts();
                 productos.Sort((x, y) => x.UnitPrice.CompareTo(y.UnitPrice));
                 return Ok(productos);
             }
@@ -74,7 +77,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var productos = _service.GetProductos();
+                var productos = _service.GetAllProducts();
                 productos.Sort((x, y) => y.UnitPrice.CompareTo(x.UnitPrice));
                 return Ok(productos);
             }
@@ -90,13 +93,14 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var producto = _service.GetProductoById(id);
-                if (producto == null)
+                var productDto = _service.GetProductDtoForDisplayById(id);
+
+                if (productDto == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(producto);
+                return Ok(productDto);
             }
             catch (Exception)
             {
@@ -109,20 +113,20 @@ namespace TopChoiceHardware.ProductsService.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult UpdateProduct(int id, [FromBody] ProductDtoForCreation product) //Es dto porque los datos mostrados en la app son dtos
+        public IActionResult UpdateProduct(int id, [FromBody] ProductDtoForCreation productDto) //Es dto porque los datos mostrados en la app son dtos
         {
-            if (product== null)
+            if (productDto == null)
             {
                 return BadRequest("Todos los campos deben estar completos para poder realizar la actualización de este elemento.");
             }
-            var productEntity = _service.GetProductoById(id); //Se obtiene el product en la db
+            var productEntity = _service.GetProductById(id); //Se obtiene el product en la db
 
             if (productEntity == null)
             {
                 return NotFound();
             }
 
-            _mapper.Map(product, productEntity); //mapea el pasado por parametro a la entidad en DB
+            _mapper.Map(productDto, productEntity); //mapea el pasado por parametro a la entidad en DB
             _service.UpdateProduct(productEntity);
 
             return NoContent();

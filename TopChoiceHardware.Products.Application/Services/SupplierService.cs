@@ -12,26 +12,26 @@ namespace TopChoiceHardware.Products.Application.Services
     public interface ISupplierService
     {
         Supplier CreateSupplier(SupplierDto proveedor);
-        List<Supplier> GetSuppliers();
+        List<Supplier> GetAllSuppliers();
         Supplier GetSupplierById(int id);
     }
     public class SupplierService : ISupplierService
     {
-        private IGenericRepository _repository;
+        private ISupplierRepository _repository;
 
-        public SupplierService(IGenericRepository repository)
+        public SupplierService(ISupplierRepository repository)
         {
             _repository = repository;
         }
 
-        public Supplier CreateSupplier(SupplierDto proveedor)
+        public Supplier CreateSupplier(SupplierDto supplier)
         {
             var entity = new Supplier
             {
-                CompanyName = proveedor.CompanyName,
-                Email = proveedor.Email,
-                Phone = proveedor.Phone,
-                AddressId = proveedor.AddressId
+                CompanyName = supplier.CompanyName,
+                Email = supplier.Email,
+                Phone = supplier.Phone,
+                AddressId = supplier.AddressId
             };
 
             _repository.Add(entity);
@@ -40,12 +40,12 @@ namespace TopChoiceHardware.Products.Application.Services
 
         public Supplier GetSupplierById(int id)
         {
-            return _repository.GetById<Supplier>(id);
+            return _repository.GetSupplierById(id);
         }
 
-        public List<Supplier> GetSuppliers()
+        public List<Supplier> GetAllSuppliers()
         {
-            return _repository.GetAll<Supplier>();
+            return _repository.GetAllSuppliers();
         }
     }
 }

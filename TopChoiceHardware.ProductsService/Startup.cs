@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 using TopChoiceHardware.Products.AccessData;
 using TopChoiceHardware.Products.AccessData.Commands;
 using TopChoiceHardware.Products.Application.Services;
@@ -28,6 +31,29 @@ namespace TopChoiceHardware.ProductsService
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TopChoiceHardware.ProductsService", Version = "v1" });
+
+                var securitySchema = new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                };
+
+                c.AddSecurityDefinition("Bearer", securitySchema);
+
+                var securityRequirement = new OpenApiSecurityRequirement
+                {
+                    { securitySchema, new[] { "Bearer" } }
+                };
+
+                c.AddSecurityRequirement(securityRequirement);
             });
             services.AddAutoMapper(typeof(Startup));
             //CORS, Permite cualquier origen
@@ -38,13 +64,34 @@ namespace TopChoiceHardware.ProductsService
                                                             .AllowAnyMethod()
                                                             .AllowAnyHeader());
             });
-            var connectionString = Configuration.GetSection("ConnectionString").Value;
-            services.AddDbContext<ProductosContext>(options => options.UseSqlServer(connectionString));
-            services.AddTransient<IGenericRepository, GenericRepository>();
-            services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<ICategoriaService, CategoryService>();
-            services.AddTransient<ISupplierService, SupplierService>();
             
+            var key = Encoding.ASCII.GetBytes(Configuration.GetValue<string>("SecretKey"));
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true; 
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
+            var connectionString = Configuration.GetSection("ConnectionString").Value;
+            services.AddDbContext<ProductsContext>(options => options.UseSqlServer(connectionString));
+            services.AddTransient<IProductsRepository, ProductsRepository>();
+            services.AddTransient<ISupplierRepository,SupplierRepository>();
+            services.AddTransient<ICategoryRepository,CategoryRepository>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ISupplierService, SupplierService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,11 +108,19 @@ namespace TopChoiceHardware.ProductsService
                                           .AllowAnyHeader()
                                           .AllowAnyHeader());
 
-            //app.UseHttpsRedirection();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseAuthentication();
+
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

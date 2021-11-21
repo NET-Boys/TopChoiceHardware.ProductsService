@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,12 @@ namespace TopChoiceHardware.ProductsService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoriaService _service;
+        private readonly ICategoryService _service;
 
-        public CategoryController(ICategoriaService service)
+        public CategoryController(ICategoryService service)
         {
             _service = service;
         }
@@ -27,7 +29,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                return new JsonResult(_service.CreateCategoria(categoria)) { StatusCode = 201 };
+                return new JsonResult(_service.CreateCategory(categoria)) { StatusCode = 201 };
             }
             catch (Exception e)
             {
@@ -41,7 +43,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var categorias = _service.GetCategorias();
+                var categorias = _service.GetAllCategorys();
 
                 return Ok(categorias);
             }
@@ -57,7 +59,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var categoria = _service.GetCategoriaById(id);
+                var categoria = _service.GetCategoryById(id);
                 if (categoria == null)
                 {
                     return NotFound();

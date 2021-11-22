@@ -98,7 +98,13 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                         {
                             ImageId = 1,
                             ProductId = 1,
-                            Url = "https://imgur.com/O1EfiHW"
+                            Url = "https://i.imgur.com/O1EfiHW.png"
+                        },
+                        new
+                        {
+                            ImageId = 2,
+                            ProductId = 1,
+                            Url = "https://i.imgur.com/cRSZLrc.png"
                         });
                 });
 
@@ -119,6 +125,9 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("OnSale")
                         .HasColumnType("bit");
@@ -155,12 +164,167 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             Brand = "AMD",
                             CategoryId = 1,
                             Description = "Todos los procesadores AMD Ryzen serie 5000 cuentan con un conjunto completo de tecnologías diseñadas para elevar la potencia de procesamiento de tu PC, incluidas Precision Boost 25, Precision Boost Overdrive, PCIe 4.0 (en procesadores seleccionados) y Resizable BAR.",
+                            Image = "https://i.imgur.com/O1EfiHW.png",
                             OnSale = false,
                             ProductName = "Procesador Amd Ryzen 7 5700G 4.6 Ghz - AM4",
                             SupplierId = 1,
                             UnitPrice = 65999m,
                             UnitsInStock = 10,
                             Url = "https://www.amd.com/es/products/apu/amd-ryzen-7-5700g"
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            Brand = "INTEL",
+                            CategoryId = 1,
+                            Description = "Los procesadores para desktop Intel Core de 10 Generación, que cuentan con hasta 5,3 GHz, tecnología Intel Thermal Velocity Boost (Intel TVB), 20 MB de caché inteligente Intel y conexión Intel Ethernet I225 ofrecen a los jugadores y a los profesionales creativos importantes ventajas de desempeño.",
+                            Image = "https://i.imgur.com/1cDE1v4.png?1",
+                            OnSale = false,
+                            ProductName = "Procesador  Intel Core i5 10600KF 4.8 Ghz Comet Lake 1200",
+                            SupplierId = 1,
+                            UnitPrice = 30499m,
+                            UnitsInStock = 5,
+                            Url = "https://ark.intel.com/content/www/es/es/ark/products/199315/intel-core-i5-10600kf-processor-12m-cache-up-to-4-80-ghz.html"
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            Brand = "INTEL",
+                            CategoryId = 1,
+                            Description = "Experimente un rendimiento increíble en videojuegos, edite y comparta con fluidez vídeo en 360 grados y disfrute de entretenimiento 4K Ultra HD fantástico, y todo con unas transferencias de datos a la velocidad de la luz que ofrece la tecnología Thunderbolt™ 3.",
+                            Image = "https://i.imgur.com/EFy8fOT.png",
+                            OnSale = false,
+                            ProductName = "Procesador  Intel Core i7 9700F 4.7 Ghz Coffee Lake 1151",
+                            SupplierId = 1,
+                            UnitPrice = 40499m,
+                            UnitsInStock = 5,
+                            Url = "https://ark.intel.com/content/www/es/es/ark/products/193738/intel-core-i7-9700f-processor-12m-cache-up-to-4-70-ghz.html"
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            Brand = "AMD",
+                            CategoryId = 1,
+                            Description = "Cuando cuentas con la arquitectura de procesadores más avanzada del mundo para jugadores y creadores de contenido, las posibilidades son infinitas.Ya sea que juegues los juegos más recientes, diseñes el próximo rascacielos o proceses datos, necesitas un procesador poderoso que pueda dar respuesta.",
+                            Image = "https://i.imgur.com/BI7uFjv.png",
+                            OnSale = false,
+                            ProductName = "Procesador  Amd Ryzen 5 5600G 4.4 Ghz - AM4",
+                            SupplierId = 1,
+                            UnitPrice = 54999m,
+                            UnitsInStock = 10,
+                            Url = "https://www.amd.com/es/products/apu/amd-ryzen-5-5600g"
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            Brand = "INTEL",
+                            CategoryId = 1,
+                            Description = "Procesador Intel® Core™ de 10ma Generación equipado con los gráficos Intel. Estos procesadores ofrecen un nuevo nivel de integración que permite potenciar las experiencias de uso de computadoras en la actualidad y en el futuro.",
+                            Image = "https://i.imgur.com/HlWiLZf.png",
+                            OnSale = false,
+                            ProductName = "Procesador Intel Core i3 10100 4.3 Ghz Comet Lake 1200",
+                            SupplierId = 1,
+                            UnitPrice = 27999m,
+                            UnitsInStock = 5,
+                            Url = "https://www.intel.la/content/www/xl/es/products/sku/199283/intel-core-i310100-processor-6m-cache-up-to-4-30-ghz/specifications.html"
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            Brand = "AMD",
+                            CategoryId = 1,
+                            Description = "Sumergíte en la tecnología líder para gráficas con la arquitectura Graphics Core Next (GCN) de AMD. Esta tecnología de tercera generación activa las prestaciones avanzadas y el increíble rendimiento de las gráficas AMD Radeon",
+                            Image = "https://i.imgur.com/GJk8cpx.png",
+                            OnSale = false,
+                            ProductName = "Procesador Amd Apu A6 A6-9500 3.5 Ghz - AM4",
+                            SupplierId = 1,
+                            UnitPrice = 6499m,
+                            UnitsInStock = 10,
+                            Url = "https://www.amd.com/es/products/apu/7th-gen-a6-9500-apu"
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            Brand = "Asrock",
+                            CategoryId = 2,
+                            Description = "Soporta Socket AMD AM4 Ryzen™ 2000, 3000, 4000 G-Series, 5000 y 5000 G-Series Desktop Processors 2 DIMMs, Soporta memoria DDR4 3200 + (OC)",
+                            Image = "https://i.imgur.com/kgyIGNT.png",
+                            OnSale = false,
+                            ProductName = "Motherboard AM4 - Asrock B450M HDV 4.0",
+                            SupplierId = 1,
+                            UnitPrice = 8999m,
+                            UnitsInStock = 10,
+                            Url = "https://www.asrock.com/mb/AMD/B450M-HDV%20R4.0/index.la.asp#Specification"
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            Brand = "AORUS",
+                            CategoryId = 2,
+                            Description = "Supports AMD Ryzen™ 5000 Series / Ryzen™ 5000 G - Series / Ryzen™ 4000 G - Series and Ryzen™ 3000 Series Processors Dual Channel ECC / Non - ECC Unbuffered DDR4, 4 DIMMs",
+                            Image = "https://i.imgur.com/yjl0knB.png",
+                            OnSale = false,
+                            ProductName = "Motherboard AM4 - Gigabyte GA-B550 AORUS ELITE AX V2",
+                            SupplierId = 1,
+                            UnitPrice = 30999m,
+                            UnitsInStock = 10,
+                            Url = "https://www.gigabyte.com/ar/Motherboard/B550-AORUS-ELITE-AX-V2-rev-10#kf"
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            Brand = "Asus TUF",
+                            CategoryId = 2,
+                            Description = "Socket AMD AM4: Listo para los procesadores AMD RyzenTM de 2da y 3ra generación. 4 x DIMM, Max. 128GB, DDR4 4400(O.C)/3466(O.C.)/3400(O.C.)/3200(O.C.)/3000(O.C.)/2933(O.C.)/2800(O.C.)/2666/2400/2133",
+                            Image = "https://i.imgur.com/4nmN1jo.png",
+                            OnSale = false,
+                            ProductName = "Motherboard AM4 - Asus Tuf X570-PLUS WIFI",
+                            SupplierId = 1,
+                            UnitPrice = 34999m,
+                            UnitsInStock = 10,
+                            Url = "https://www.asus.com/latin/Motherboards-Components/Motherboards/TUF-Gaming/TUF-GAMING-X570-PLUS-WI-FI/"
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            Brand = "MSI",
+                            CategoryId = 2,
+                            Description = "AMD Socket AM4 , AMD® A320 Chipset, Supports DDR4 1866/ 2133/ 2400/ 2667/ 2800/ 2933/ 3000/ 3066/ 3200 MHz",
+                            Image = "https://i.imgur.com/SoVh1gC.png",
+                            OnSale = false,
+                            ProductName = "Motherboard AM4 - Msi A320M PRO VH",
+                            SupplierId = 1,
+                            UnitPrice = 7499m,
+                            UnitsInStock = 10,
+                            Url = "https://www.msi.com/Motherboard/A320M-PRO-VH"
+                        },
+                        new
+                        {
+                            ProductId = 11,
+                            Brand = "Kingston",
+                            CategoryId = 3,
+                            Description = "Capacidad de 4 GB, velocidad de 3200 MHz, tecnología  DDR4.",
+                            Image = "https://i.imgur.com/5Qx2cpJ.png",
+                            OnSale = false,
+                            ProductName = "Memoria Ram DDR4 - 4Gb 3200 Mhz Beast Kingston Fury",
+                            SupplierId = 2,
+                            UnitPrice = 4499m,
+                            UnitsInStock = 10,
+                            Url = ""
+                        },
+                        new
+                        {
+                            ProductId = 12,
+                            Brand = "Hikvision",
+                            CategoryId = 3,
+                            Description = "Capacidad de 16 GB, velocidad de 2666 MHz, tecnología  DDR4.",
+                            Image = "https://i.imgur.com/8xl51WL.png",
+                            OnSale = false,
+                            ProductName = "Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision",
+                            SupplierId = 2,
+                            UnitPrice = 12500m,
+                            UnitsInStock = 10,
+                            Url = ""
                         });
                 });
 
@@ -223,7 +387,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
             modelBuilder.Entity("TopChoiceHardware.Products.Domain.Entities.Image", b =>
                 {
                     b.HasOne("TopChoiceHardware.Products.Domain.Entities.Product", "Product")
-                        .WithMany("Images")
+                        .WithMany("Carousel")
                         .HasForeignKey("ProductId")
                         .HasConstraintName("FK__Products__Image")
                         .OnDelete(DeleteBehavior.ClientCascade)
@@ -258,7 +422,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
 
             modelBuilder.Entity("TopChoiceHardware.Products.Domain.Entities.Product", b =>
                 {
-                    b.Navigation("Images");
+                    b.Navigation("Carousel");
                 });
 
             modelBuilder.Entity("TopChoiceHardware.Products.Domain.Entities.Supplier", b =>

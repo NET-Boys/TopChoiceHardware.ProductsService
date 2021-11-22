@@ -17,9 +17,11 @@ namespace TopChoiceHardware.Products.Domain.Entities
         public string Brand { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
+        public string Image { get; set; }
         public bool OnSale { get; set; }
+
         public virtual Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
-        public virtual List<Image> Images { get; set; }
+        public virtual List<Image> Carousel { get; set; }
     }
 }

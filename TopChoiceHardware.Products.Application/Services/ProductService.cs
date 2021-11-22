@@ -38,7 +38,9 @@ namespace TopChoiceHardware.Products.Application.Services
                 UnitPrice = producto.UnitPrice,
                 UnitsInStock = producto.UnitsInStock,
                 Brand = producto.Brand,
-                Description = producto.Description
+                Description = producto.Description,
+                Image=producto.Image,
+                Url=producto.Url
             };
 
             _repository.Add(entity);

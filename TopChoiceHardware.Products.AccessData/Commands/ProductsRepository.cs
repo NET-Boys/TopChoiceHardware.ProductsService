@@ -37,11 +37,17 @@ namespace TopChoiceHardware.Products.AccessData.Commands
         public ProductDtoForDisplay GetProductDtoForDisplayById(int productId)
         {
             var product = GetProductById(productId);
-            var productMapped = _mapper.Map<ProductDtoForDisplay>(product);
-            //CategoryID y SupplierID ahora son strings 
-            productMapped.CategoryName = _categoryRepository.GetCategoryById(product.CategoryId).CategoryName;
-            productMapped.SupplierName = _supplierRepository.GetSupplierById(product.SupplierId).CompanyName;
-            return productMapped;
+            if(product != null)
+            {
+                var productMapped = _mapper.Map<ProductDtoForDisplay>(product);
+                //CategoryID y SupplierID ahora son strings 
+                productMapped.CategoryName = _categoryRepository.GetCategoryById(product.CategoryId).CategoryName;
+                productMapped.SupplierName = _supplierRepository.GetSupplierById(product.SupplierId).CompanyName;
+                return productMapped;
+            }
+
+            return null;
+            
         }
         public List<Product> GetAllProducts()
         {

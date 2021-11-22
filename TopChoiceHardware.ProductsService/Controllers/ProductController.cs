@@ -101,7 +101,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
 
                 if (productDto == null)
                 {
-                    return NotFound();
+                    return new JsonResult(new ProductNotFoundResponse()) { StatusCode = 404 };
                 }
 
                 return Ok(productDto);

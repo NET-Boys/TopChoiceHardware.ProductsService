@@ -43,3 +43,18 @@ C:\Users\Jose Luis\Google Drive\Doc-Universidad\Proyecto Software\TopChoiceHardw
 C:\Users\Jose Luis\Google Drive\Doc-Universidad\Proyecto Software\TopChoiceHardware\Microservicio Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\ref\TopChoiceHardware.Products.Domain.dll
 C:\Users\Jose Luis\Google Drive\Doc-Universidad\Proyecto Software\TopChoiceHardware\Microservicio Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.pdb
 C:\Users\Jose Luis\Google Drive\Doc-Universidad\Proyecto Software\TopChoiceHardware\Microservicio Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.genruntimeconfig.cache
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\bin\Debug\net5.0\TopChoiceHardware.Products.Domain.deps.json
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\bin\Debug\net5.0\TopChoiceHardware.Products.Domain.runtimeconfig.json
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\bin\Debug\net5.0\TopChoiceHardware.Products.Domain.runtimeconfig.dev.json
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\bin\Debug\net5.0\TopChoiceHardware.Products.Domain.dll
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\bin\Debug\net5.0\ref\TopChoiceHardware.Products.Domain.dll
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\bin\Debug\net5.0\TopChoiceHardware.Products.Domain.pdb
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.csproj.AssemblyReference.cache
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.AssemblyInfoInputs.cache
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.AssemblyInfo.cs
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.dll
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\ref\TopChoiceHardware.Products.Domain.dll
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.pdb
+C:\Users\kerne\Desktop\Productos\TopChoiceHardware.ProductsService\TopChoiceHardware.Products.Domain\obj\Debug\net5.0\TopChoiceHardware.Products.Domain.genruntimeconfig.cache

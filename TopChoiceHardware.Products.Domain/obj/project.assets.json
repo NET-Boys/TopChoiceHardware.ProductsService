@@ -757,23 +757,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jose Luis\\.nuget\\packages\\": {},
+    "C:\\Users\\kerne\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\kerne\\Desktop\\Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj",
       "projectName": "TopChoiceHardware.Products.Domain",
-      "projectPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj",
-      "packagesPath": "C:\\Users\\Jose Luis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jose Luis\\Google Drive\\Doc-Universidad\\Proyecto Software\\TopChoiceHardware\\Microservicio Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\obj\\",
+      "projectPath": "C:\\Users\\kerne\\Desktop\\Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\TopChoiceHardware.Products.Domain.csproj",
+      "packagesPath": "C:\\Users\\kerne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kerne\\Desktop\\Productos\\TopChoiceHardware.ProductsService\\TopChoiceHardware.Products.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jose Luis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kerne\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -822,7 +822,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

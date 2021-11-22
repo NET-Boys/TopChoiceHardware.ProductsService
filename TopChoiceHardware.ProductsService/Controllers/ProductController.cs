@@ -43,6 +43,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         }
 
         [HttpGet] //Es getall, no se especifica
+        [AllowAnonymous]
         public IActionResult GetAllProducts()
         {
             try
@@ -58,6 +59,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
             }
         }
         [HttpGet("PriceSortedAsc")]
+        [AllowAnonymous]
         public IActionResult GetAllProductsPriceSortedAsc()
         {
             try
@@ -73,6 +75,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
             }
         }
         [HttpGet("PriceSortedDesc")]
+        [AllowAnonymous]
         public IActionResult GetAllProductsPriceSortedDesc()
         {
             try
@@ -88,7 +91,8 @@ namespace TopChoiceHardware.ProductsService.Controllers
             }
         }
 
-        [HttpGet("{id}")] //por ID
+        [HttpGet("{id}")]
+        [AllowAnonymous]//por ID
         public IActionResult GetProductById(int id)
         {
             try

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
 
 namespace TopChoiceHardware.Products.Domain.Commands
@@ -15,5 +12,7 @@ namespace TopChoiceHardware.Products.Domain.Commands
         void Delete(Supplier supplier);
         void DeleteById(int id);
         Supplier GetSupplierById(int id);
+        SupplierDtoForDisplay GetSupplierDtoForDisplayById(int supplierId);
+        List<SupplierDtoForDisplay> GetAllSupplierDtoForDisplay();
     }
 }

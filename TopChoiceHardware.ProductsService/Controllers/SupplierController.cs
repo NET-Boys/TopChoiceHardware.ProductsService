@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TopChoiceHardware.Products.Application.Services;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
@@ -25,7 +22,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(Supplier), StatusCodes.Status201Created)]
-        public IActionResult Post(SupplierDto proveedor)
+        public IActionResult Post(SupplierDtoForDisplay proveedor)
         {
             try
             {
@@ -43,7 +40,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var proveedores = _service.GetAllSuppliers();
+                var proveedores = _service.GetAllSupplierDtoForDisplay();
 
                 return Ok(proveedores);
             }
@@ -59,7 +56,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var proveedor = _service.GetSupplierById(id);
+                var proveedor = _service.GetSupplierDtoForDisplayById(id);
                 if (proveedor == null)
                 {
                     return NotFound();
@@ -69,7 +66,6 @@ namespace TopChoiceHardware.ProductsService.Controllers
             }
             catch (Exception)
             {
-
                 return StatusCode(500, "Internal server error");
             }
         }

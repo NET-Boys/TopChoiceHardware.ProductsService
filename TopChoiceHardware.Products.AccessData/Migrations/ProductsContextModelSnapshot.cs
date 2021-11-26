@@ -91,7 +91,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Images");
+                    b.ToTable("Image");
 
                     b.HasData(
                         new

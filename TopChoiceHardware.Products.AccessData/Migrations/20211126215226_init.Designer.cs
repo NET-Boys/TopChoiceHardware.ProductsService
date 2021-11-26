@@ -9,7 +9,7 @@ using TopChoiceHardware.Products.AccessData;
 namespace TopChoiceHardware.Products.AccessData.Migrations
 {
     [DbContext(typeof(ProductsContext))]
-    [Migration("20211122183534_init")]
+    [Migration("20211126215226_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,7 +93,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Images");
+                    b.ToTable("Image");
 
                     b.HasData(
                         new

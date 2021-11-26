@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TopChoiceHardware.Products.Application.Services;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
@@ -43,7 +40,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var categorias = _service.GetAllCategorys();
+                var categorias = _service.GetAllCategoryDtosForDisplay();
 
                 return Ok(categorias);
             }
@@ -59,7 +56,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         {
             try
             {
-                var categoria = _service.GetCategoryById(id);
+                var categoria = _service.GetCategoryDtoForDisplayById(id);
                 if (categoria == null)
                 {
                     return NotFound();

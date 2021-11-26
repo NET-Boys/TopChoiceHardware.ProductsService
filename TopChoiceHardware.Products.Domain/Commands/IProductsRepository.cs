@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
 
@@ -18,6 +14,8 @@ namespace TopChoiceHardware.Products.Domain.Commands
         void Update(Product product);
         void Delete(Product product);
         void DeleteById(int id);
-        
+        List<ProductDtoForDisplay> GetAllProductDtoForDisplayByCategoryId(int categoryId);
+        List<ProductDtoForDisplay> GetAllProductDtoForDisplayBySupplierId(int supplierId);
+        List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order);
     }
 }

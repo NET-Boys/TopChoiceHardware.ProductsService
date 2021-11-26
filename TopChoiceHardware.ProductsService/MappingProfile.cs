@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using TopChoiceHardware.Products.Domain.Commands;
+﻿using AutoMapper;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
 
@@ -22,6 +17,8 @@ namespace TopChoiceHardware.ProductsService
         {
             CreateMap<ProductDtoForCreation, Product>();
             CreateMap<Product, ProductDtoForDisplay>();
+            CreateMap<Category, CategoryDto>();
+            CreateMap<Supplier,SupplierDtoForDisplay>();
             //.ForMember(dto => dto.CategoryName, act => act.MapFrom(src => _categoryRepository.GetCategoryById(src.CategoryId).CategoryName))
             //.ForMember(dto => dto.SupplierName, act => act.MapFrom(src => _supplierRepository.GetSupplierById(src.SupplierId).CompanyName));
         }

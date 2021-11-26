@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using AutoMapper;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TopChoiceHardware.Products.Application.Services;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
@@ -27,62 +24,44 @@ namespace TopChoiceHardware.ProductsService.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public IActionResult Post(ProductDtoForCreation producto)
         {
             try
             {
                 return new JsonResult(_service.CreateProduct(producto)) { StatusCode = 201 };
-
-                //Agregar lo de images
             }
             catch (Exception e)
             {
-
                 return BadRequest(e.Message);
             }
         }
 
-        [HttpGet] //Es getall, no se especifica
+        [HttpGet]
         [AllowAnonymous]
-        public IActionResult GetAllProducts()
+        public IActionResult GetAllProducts(string order=null)
         {
             try
             {
-                var productos = _service.GetAllProductDtoForDisplay();
+                if (order != null)
+                {
+                    var ListProductsDto = _service.GetProductDtoForDisplaysSortedByUnitPrice(order);
 
-                return Ok(productos);
-            }
-            catch (Exception)
-            {
+                    if (ListProductsDto == null)
+                    {
+                        return new JsonResult(new ProductNotFoundResponse()) { StatusCode = 404 };
+                    }
 
-                return StatusCode(500, "Internal server error");
-            }
-        }
-        [HttpGet("PriceSortedAsc")]
-        [AllowAnonymous]
-        public IActionResult GetAllProductsPriceSortedAsc()
-        {
-            try
-            {
-                var productos = _service.GetAllProducts();
-                productos.Sort((x, y) => x.UnitPrice.CompareTo(y.UnitPrice));
-                return Ok(productos);
-            }
-            catch (Exception)
-            {
+                    return Ok(ListProductsDto);
+                }
+                else
+                {
+                    var productos = _service.GetAllProductDtoForDisplay();
 
-                return StatusCode(500, "Internal server error");
-            }
-        }
-        [HttpGet("PriceSortedDesc")]
-        [AllowAnonymous]
-        public IActionResult GetAllProductsPriceSortedDesc()
-        {
-            try
-            {
-                var productos = _service.GetAllProducts();
-                productos.Sort((x, y) => y.UnitPrice.CompareTo(x.UnitPrice));
-                return Ok(productos);
+                    return Ok(productos);
+                }
+
             }
             catch (Exception)
             {
@@ -92,7 +71,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]//por ID
+        [AllowAnonymous]
         public IActionResult GetProductById(int id)
         {
             try
@@ -109,6 +88,44 @@ namespace TopChoiceHardware.ProductsService.Controllers
             catch (Exception)
             {
 
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpGet("category/{categoryId}")]
+        [AllowAnonymous]
+        public IActionResult GetProductByCategoryId(int categoryId)
+        {
+            try
+            {
+                var productDto = _service.GetAllProductDtoForDisplayByCategoryId(categoryId);
+
+                if (productDto == null)
+                {
+                    return new JsonResult(new ProductNotFoundResponse()) { StatusCode = 404 };
+                }
+                return Ok(productDto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpGet("supplier/{supplierId}")]
+        [AllowAnonymous]
+        public IActionResult GetProductBySupplierId(int supplierId)
+        {
+            try
+            {
+                var productDto = _service.GetAllProductDtoForDisplaysBySupplierId(supplierId);
+
+                if (productDto == null)
+                {
+                    return new JsonResult(new ProductNotFoundResponse()) { StatusCode = 404 };
+                }
+                return Ok(productDto);
+            }
+            catch (Exception)
+            {
                 return StatusCode(500, "Internal server error");
             }
         }

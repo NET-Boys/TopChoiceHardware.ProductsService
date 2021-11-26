@@ -321,7 +321,6 @@ namespace TopChoiceHardware.Products.AccessData
                      Url = "",
                      OnSale = false
                  }
-
                 );
             modelBuilder.Entity<Image>(e =>
             {
@@ -343,6 +342,6 @@ namespace TopChoiceHardware.Products.AccessData
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<Image> Image { get; set; }
     }
 }

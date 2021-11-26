@@ -71,7 +71,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Images",
+                name: "Image",
                 columns: table => new
                 {
                     ImageId = table.Column<int>(type: "int", nullable: false)
@@ -81,7 +81,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Images", x => x.ImageId);
+                    table.PrimaryKey("PK_Image", x => x.ImageId);
                     table.ForeignKey(
                         name: "FK__Products__Image",
                         column: x => x.ProductId,
@@ -132,18 +132,18 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Images",
+                table: "Image",
                 columns: new[] { "ImageId", "ProductId", "Url" },
                 values: new object[] { 1, 1, "https://i.imgur.com/O1EfiHW.png" });
 
             migrationBuilder.InsertData(
-                table: "Images",
+                table: "Image",
                 columns: new[] { "ImageId", "ProductId", "Url" },
                 values: new object[] { 2, 1, "https://i.imgur.com/cRSZLrc.png" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_ProductId",
-                table: "Images",
+                name: "IX_Image_ProductId",
+                table: "Image",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -160,7 +160,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Images");
+                name: "Image");
 
             migrationBuilder.DropTable(
                 name: "Product");

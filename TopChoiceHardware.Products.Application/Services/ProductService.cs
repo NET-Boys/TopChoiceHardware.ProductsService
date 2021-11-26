@@ -14,6 +14,9 @@ namespace TopChoiceHardware.Products.Application.Services
         void UpdateProduct(Product product);
         ProductDtoForDisplay GetProductDtoForDisplayById(int productId);
         List<ProductDtoForDisplay> GetAllProductDtoForDisplay();
+        List<ProductDtoForDisplay> GetAllProductDtoForDisplayByCategoryId(int categoryId);
+        List<ProductDtoForDisplay> GetAllProductDtoForDisplaysBySupplierId(int supplierId);
+        List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order);
     }
     public class ProductService : IProductService
     {
@@ -39,8 +42,8 @@ namespace TopChoiceHardware.Products.Application.Services
                 UnitsInStock = producto.UnitsInStock,
                 Brand = producto.Brand,
                 Description = producto.Description,
-                Image=producto.Image,
-                Url=producto.Url
+                Image = producto.Image,
+                Url = producto.Url
             };
 
             _repository.Add(entity);
@@ -50,7 +53,6 @@ namespace TopChoiceHardware.Products.Application.Services
         {
             _repository.Update(product);
         }
-
         public Product GetProductById(int id)
         {
             return _repository.GetProductById(id);
@@ -59,7 +61,6 @@ namespace TopChoiceHardware.Products.Application.Services
         {
             return _repository.GetProductDtoForDisplayById(productId);
         }
-
         public List<Product> GetAllProducts()
         {
             return _repository.GetAllProducts();
@@ -68,6 +69,17 @@ namespace TopChoiceHardware.Products.Application.Services
         {
             return _repository.GetAllProductDtoForDisplay();
         }
-
+        public List<ProductDtoForDisplay> GetAllProductDtoForDisplayByCategoryId(int categoryId)
+        {
+            return _repository.GetAllProductDtoForDisplayByCategoryId(categoryId);
+        }
+        public List<ProductDtoForDisplay> GetAllProductDtoForDisplaysBySupplierId(int supplierId)
+        {
+            return _repository.GetAllProductDtoForDisplayBySupplierId(supplierId);
+        }
+        public List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order)
+        {
+            return _repository.GetProductDtoForDisplaysSortedByUnitPrice(order);
+        }
     }
 }

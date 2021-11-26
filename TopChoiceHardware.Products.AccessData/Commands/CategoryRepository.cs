@@ -1,9 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopChoiceHardware.Products.Domain.Commands;
+using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
 
 namespace TopChoiceHardware.Products.AccessData.Commands
@@ -11,8 +10,11 @@ namespace TopChoiceHardware.Products.AccessData.Commands
     public class CategoryRepository: ICategoryRepository
     {
         private readonly ProductsContext _context;
-        public CategoryRepository(ProductsContext context)
+        private readonly IMapper _mapper;
+
+        public CategoryRepository(ProductsContext context, IMapper mapper)
         {
+            _mapper = mapper;
             _context = context;
         }
         public void Add(Category category)
@@ -37,6 +39,38 @@ namespace TopChoiceHardware.Products.AccessData.Commands
         public Category GetCategoryById(int id)
         {
             return _context.Category.SingleOrDefault(category => category.CategoryId == id);
+        }
+        
+        public CategoryDto GetCategoryDtoForDisplayById(int categoryId)
+        {
+            var category = GetCategoryById(categoryId);
+            if (category != null)
+            {
+                var categoryMapped = _mapper.Map<CategoryDto>(category);
+                var productsMapped = _mapper.Map<List<ProductDtoForDisplay>>(GetListProductsOfCategoryByCategoryId(categoryId));
+                categoryMapped.Products = productsMapped;
+                return categoryMapped;
+            }
+            return null;
+        }
+        public List<Product> GetListProductsOfCategoryByCategoryId(int categoryId)
+        {
+            var products = _context.Product.Where(products => products.CategoryId == categoryId);
+            var productslist = new List<Product>();
+            foreach (var product in products)
+            {
+                productslist.Add(product);
+            }
+            return productslist;
+        }
+        public List<CategoryDto> GetAllCategoryDtosForDisplay()
+        {
+            var listcategoryDtos = new List<CategoryDto>();
+            foreach (var category in GetAllCategorys())
+            {
+                listcategoryDtos.Add(GetCategoryDtoForDisplayById(category.CategoryId));
+            }
+            return listcategoryDtos;
         }
         public void DeleteById(int id)
         {

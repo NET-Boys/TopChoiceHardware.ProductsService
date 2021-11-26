@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TopChoiceHardware.Products.Domain.Commands;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
@@ -11,9 +7,11 @@ namespace TopChoiceHardware.Products.Application.Services
 {
     public interface ISupplierService
     {
-        Supplier CreateSupplier(SupplierDto proveedor);
+        Supplier CreateSupplier(SupplierDtoForDisplay proveedor);
         List<Supplier> GetAllSuppliers();
         Supplier GetSupplierById(int id);
+        SupplierDtoForDisplay GetSupplierDtoForDisplayById(int supplierId);
+        List<SupplierDtoForDisplay> GetAllSupplierDtoForDisplay();
     }
     public class SupplierService : ISupplierService
     {
@@ -24,7 +22,7 @@ namespace TopChoiceHardware.Products.Application.Services
             _repository = repository;
         }
 
-        public Supplier CreateSupplier(SupplierDto supplier)
+        public Supplier CreateSupplier(SupplierDtoForDisplay supplier)
         {
             var entity = new Supplier
             {
@@ -46,6 +44,14 @@ namespace TopChoiceHardware.Products.Application.Services
         public List<Supplier> GetAllSuppliers()
         {
             return _repository.GetAllSuppliers();
+        }
+        public SupplierDtoForDisplay GetSupplierDtoForDisplayById(int supplierId)
+        {
+            return _repository.GetSupplierDtoForDisplayById(supplierId);
+        }
+        public List<SupplierDtoForDisplay> GetAllSupplierDtoForDisplay()
+        {
+            return _repository.GetAllSupplierDtoForDisplay();
         }
     }
 }

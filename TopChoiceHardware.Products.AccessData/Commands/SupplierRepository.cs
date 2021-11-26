@@ -1,37 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopChoiceHardware.Products.Domain.Commands;
 using TopChoiceHardware.Products.Domain.Entities;
+using TopChoiceHardware.Products.Domain.DTOs;
+using AutoMapper;
 
 namespace TopChoiceHardware.Products.AccessData.Commands
 {
     public class SupplierRepository: ISupplierRepository
     {
         private readonly ProductsContext _context;
-        public SupplierRepository(ProductsContext context)
+        private readonly IMapper _mapper;
+        public SupplierRepository(ProductsContext context, IMapper mapper)
         {
+            _mapper = mapper;
             _context = context;
         }
-
-        /*
-         * List<Supplier> GetAllSuppliers();
-        void Update(Supplier supplier);
-        void Delete(Supplier supplier);
-        void DeleteById(int id);
-        Supplier GetSupplierById(int id);*/
-
-
         public void Add(Supplier supplier)
         {
             _context.Supplier.Add(supplier);
             _context.SaveChanges();
+        }   
+        public Supplier GetSupplierById(int id)
+        {
+            return _context.Supplier.SingleOrDefault(Supplier => Supplier.SupplierId == id);
+        }
+        public SupplierDtoForDisplay GetSupplierDtoForDisplayById(int supplierId)
+        {
+            var supplier = GetSupplierById(supplierId);
+            if (supplier != null)
+            {
+                var productMapped = _mapper.Map<SupplierDtoForDisplay>(supplier);
+                return productMapped;
+            }
+            return null;
         }
         public List<Supplier> GetAllSuppliers()
         {
             return _context.Supplier.ToList();
+        }
+        
+        public List<SupplierDtoForDisplay> GetAllSupplierDtoForDisplay()
+        {
+            var listsupplierDtoForDisplays = new List<SupplierDtoForDisplay>();
+            foreach (var supplier in GetAllSuppliers())
+            {
+                listsupplierDtoForDisplays.Add(GetSupplierDtoForDisplayById(supplier.SupplierId));
+            }
+            return listsupplierDtoForDisplays;
         }
         public void Update(Supplier supplier)
         {
@@ -43,10 +59,7 @@ namespace TopChoiceHardware.Products.AccessData.Commands
             _context.Supplier.Remove(supplier);
             _context.SaveChanges();
         }
-        public Supplier GetSupplierById(int id)
-        {
-            return _context.Supplier.SingleOrDefault(Supplier => Supplier.SupplierId == id);
-        }
+     
         public void DeleteById(int id)
         {
             var supplier = GetSupplierById(id);

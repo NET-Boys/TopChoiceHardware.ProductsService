@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TopChoiceHardware.Products.Domain.DTOs
 {
@@ -20,6 +16,6 @@ namespace TopChoiceHardware.Products.Domain.DTOs
         //public List<string> Images { get; set; }  //this will be a problem xd
         public string Url { get; set; }
         public bool OnSale { get; set; }
-
+        public virtual List<string> Carousel { get; set; }
     }
 }

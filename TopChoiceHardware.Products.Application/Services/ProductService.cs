@@ -21,14 +21,10 @@ namespace TopChoiceHardware.Products.Application.Services
     public class ProductService : IProductService
     {
         private IProductsRepository _repository;
-        private ICategoryRepository _categoryRepository;
-        private readonly IMapper _mapper;
 
-        public ProductService(IProductsRepository repository, ICategoryRepository categoryRepository, IMapper mapper)
+        public ProductService(IProductsRepository repository)
         {
             _repository = repository;
-            _categoryRepository = categoryRepository;
-            _mapper = mapper;
         }
 
         public Product CreateProduct(ProductDtoForCreation producto)

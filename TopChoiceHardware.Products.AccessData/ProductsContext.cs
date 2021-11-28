@@ -53,11 +53,6 @@ namespace TopChoiceHardware.Products.AccessData
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Productos__Descr__2C3393D0");
 
-                entity.HasOne(d => d.Supplier)
-                    .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.SupplierId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Productos__Suppl__2D27B809");
                 entity.HasMany(t => t.Carousel)
                     .WithOne(t => t.Product)
                     .HasForeignKey(t => t.ProductId)
@@ -72,26 +67,6 @@ namespace TopChoiceHardware.Products.AccessData
 
                 entity.Property(e => e.Url).IsRequired();
             });
-
-            modelBuilder.Entity<Supplier>(entity =>
-            {
-                entity.HasKey(e => e.SupplierId);
-
-                entity.Property(e => e.SupplierId).ValueGeneratedOnAdd();
-
-                entity.Property(e => e.CompanyName)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Phone)
-                    .IsRequired()
-                    .HasMaxLength(15);
-            });
-
             modelBuilder.Entity<Category>().HasData(
                 new Category
                 {
@@ -124,32 +99,6 @@ namespace TopChoiceHardware.Products.AccessData
                     Description = "Tarjeta de expansion del motherboard para procesamiento de graficos"
                 }
             );
-            modelBuilder.Entity<Supplier>().HasData(
-                new Supplier
-                {
-                    SupplierId = 1,
-                    CompanyName = "New Bytes",
-                    Email = "INFO@NB.COM.AR",
-                    Phone = "(11) 4011-8809",
-                    AddressId = 1
-                },
-                new Supplier
-                {
-                    SupplierId = 2,
-                    CompanyName = "MEGACOM",
-                    Email = "ventas@megacom.com.ar",
-                    Phone = "(0223) 492-4414",
-                    AddressId = 1
-                },
-                new Supplier
-                {
-                    SupplierId = 3,
-                    CompanyName = "PcRetail",
-                    Email = "info@pc-retail.com.ar",
-                    Phone = "11 49092100",
-                    AddressId = 1
-                }
-                );
             modelBuilder.Entity<Product>().HasData(
                 //Procesadores
                 new Product
@@ -341,7 +290,6 @@ namespace TopChoiceHardware.Products.AccessData
         }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<Image> Image { get; set; }
     }
 }

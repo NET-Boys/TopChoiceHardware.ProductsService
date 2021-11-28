@@ -11,15 +11,13 @@ namespace TopChoiceHardware.Products.AccessData.Commands
     {
         private readonly ProductsContext _context;
         private readonly ICategoryRepository _categoryRepository;
-        private readonly ISupplierRepository _supplierRepository;
         private readonly IMapper _mapper;
 
-        public ProductsRepository(ProductsContext context, IMapper mapper, ICategoryRepository categoryRepository, ISupplierRepository supplierRepository)
+        public ProductsRepository(ProductsContext context, IMapper mapper, ICategoryRepository categoryRepository)
         {
             _context = context;
             _mapper = mapper;
             _categoryRepository = categoryRepository;
-            _supplierRepository = supplierRepository;
         }
 
         public void Add(Product product)
@@ -48,9 +46,8 @@ namespace TopChoiceHardware.Products.AccessData.Commands
             if (product != null)
             {
                 var productMapped = _mapper.Map<ProductDtoForDisplay>(product);
-                //CategoryID y SupplierID ahora son strings 
+                //CategoryID ahora es strings 
                 productMapped.CategoryName = _categoryRepository.GetCategoryById(product.CategoryId).CategoryName;
-                productMapped.SupplierName = _supplierRepository.GetSupplierById(product.SupplierId).CompanyName;
                 productMapped.Carousel = GetCarouselOfProductsByProductId(productId);
                 return productMapped;
             }

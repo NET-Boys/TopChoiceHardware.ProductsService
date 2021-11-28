@@ -88,11 +88,9 @@ namespace TopChoiceHardware.ProductsService
             var connectionString = Configuration.GetSection("ConnectionString").Value;
             services.AddDbContext<ProductsContext>(options => options.UseSqlServer(connectionString));
             services.AddTransient<IProductsRepository, ProductsRepository>();
-            services.AddTransient<ISupplierRepository,SupplierRepository>();
             services.AddTransient<ICategoryRepository,CategoryRepository>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICategoryService, CategoryService>();
-            services.AddTransient<ISupplierService, SupplierService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

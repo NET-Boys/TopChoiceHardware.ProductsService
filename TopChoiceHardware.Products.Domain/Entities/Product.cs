@@ -17,7 +17,6 @@ namespace TopChoiceHardware.Products.Domain.Entities
         public bool OnSale { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual Supplier Supplier { get; set; }
         public virtual List<Image> Carousel { get; set; }
     }
 }

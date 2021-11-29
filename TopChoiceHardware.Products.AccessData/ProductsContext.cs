@@ -106,11 +106,10 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 1,
                     ProductName = "Procesador Amd Ryzen 7 5700G 4.6 Ghz - AM4",
                     CategoryId = 1,
-                    SupplierId = 1,
                     UnitPrice = 65999,
                     UnitsInStock = 10,
                     Brand = "AMD",
-                    Description = "Todos los procesadores AMD Ryzen serie 5000 cuentan con un conjunto completo de tecnologías diseñadas para elevar la potencia de procesamiento de tu PC, incluidas Precision Boost 25, Precision Boost Overdrive, PCIe 4.0 (en procesadores seleccionados) y Resizable BAR.",
+                    Description = "Procesador AMD Ryzen 5ta generación equipado con gráficos integrados. Incluye 8 núcleos de CPU, una velocidad de reloj base de 3,8 GHz y 8 núcleos de GPU.",
                     Image = "https://i.imgur.com/O1EfiHW.png",
                     Url = "https://www.amd.com/es/products/apu/amd-ryzen-7-5700g",
                     OnSale = false
@@ -120,11 +119,10 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 2,
                     ProductName = "Procesador  Intel Core i5 10600KF 4.8 Ghz Comet Lake 1200",
                     CategoryId = 1,
-                    SupplierId = 1,
                     UnitPrice = 30499,
                     UnitsInStock = 5,
                     Brand = "INTEL",
-                    Description = "Los procesadores para desktop Intel Core de 10 Generación, que cuentan con hasta 5,3 GHz, tecnología Intel Thermal Velocity Boost (Intel TVB), 20 MB de caché inteligente Intel y conexión Intel Ethernet I225 ofrecen a los jugadores y a los profesionales creativos importantes ventajas de desempeño.",
+                    Description = "Procesador Intel® Core™ de 10ma Generación. Sin gráficos integrados, Incluye 6 núcleos 4.1GHz (hasta 4.8 Ghz), Socket 1200, Caché 12 MB",
                     Image = "https://i.imgur.com/1cDE1v4.png?1",
                     Url = "https://ark.intel.com/content/www/es/es/ark/products/199315/intel-core-i5-10600kf-processor-12m-cache-up-to-4-80-ghz.html",
                     OnSale = false
@@ -134,12 +132,11 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 3,
                     ProductName = "Procesador  Intel Core i7 9700F 4.7 Ghz Coffee Lake 1151",
                     CategoryId = 1,
-                    SupplierId = 1,
                     UnitPrice = 40499,
                     UnitsInStock = 5,
                     Brand = "INTEL",
-                    Description = "Experimente un rendimiento increíble en videojuegos, edite y comparta con fluidez vídeo en 360 grados y disfrute de entretenimiento 4K Ultra HD fantástico, y todo con unas transferencias de datos a la velocidad de la luz que ofrece la tecnología Thunderbolt™ 3.",
-                    Image = "https://i.imgur.com/EFy8fOT.png",
+                    Description = "Procesador Intel Core i7-9700F de Novena Generación. Sin gráficos integrados, incluye 8 núcleos 3.0 GHz (hasta 4.7 GHz), Socket 1151, Caché 12 MB",
+                    Image = "https://i.imgur.com/pPlPUe6.png",
                     Url = "https://ark.intel.com/content/www/es/es/ark/products/193738/intel-core-i7-9700f-processor-12m-cache-up-to-4-70-ghz.html",
                     OnSale = false
                 },
@@ -148,11 +145,10 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 4,
                     ProductName = "Procesador  Amd Ryzen 5 5600G 4.4 Ghz - AM4",
                     CategoryId = 1,
-                    SupplierId = 1,
                     UnitPrice = 54999,
                     UnitsInStock = 10,
                     Brand = "AMD",
-                    Description = "Cuando cuentas con la arquitectura de procesadores más avanzada del mundo para jugadores y creadores de contenido, las posibilidades son infinitas.Ya sea que juegues los juegos más recientes, diseñes el próximo rascacielos o proceses datos, necesitas un procesador poderoso que pueda dar respuesta.",
+                    Description = "Procesador AMD Ryzen 5ta generación equipado con gráficos integrados. Incluye seis núcleos de CPU, una velocidad de reloj base de 3,9 GHz y siete núcleos de GPU",
                     Image = "https://i.imgur.com/BI7uFjv.png",
                     Url = "https://www.amd.com/es/products/apu/amd-ryzen-5-5600g",
                     OnSale = false
@@ -162,12 +158,11 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 5,
                     ProductName = "Procesador Intel Core i3 10100 4.3 Ghz Comet Lake 1200",
                     CategoryId = 1,
-                    SupplierId = 1,
                     UnitPrice = 27999,
                     UnitsInStock = 5,
                     Brand = "INTEL",
-                    Description = "Procesador Intel® Core™ de 10ma Generación equipado con los gráficos Intel. Estos procesadores ofrecen un nuevo nivel de integración que permite potenciar las experiencias de uso de computadoras en la actualidad y en el futuro.",
-                    Image = "https://i.imgur.com/HlWiLZf.png",
+                    Description = "Procesador Intel® Core™ de 10ma Generación equipado con los gráficos Intel. Incluye 4 núcleos y 8 hilos de procesamiento, velocidad base de i3-10100 de 3.6 GHZ y turbo hasta 4.3 GHZ, Socket 1200, 6MB Caché.",
+                    Image = "https://i.imgur.com/0RdBm8b.png",
                     Url = "https://www.intel.la/content/www/xl/es/products/sku/199283/intel-core-i310100-processor-6m-cache-up-to-4-30-ghz/specifications.html",
                     OnSale = false
                 },
@@ -176,12 +171,11 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 6,
                     ProductName = "Procesador Amd Apu A6 A6-9500 3.5 Ghz - AM4",
                     CategoryId = 1,
-                    SupplierId = 1,
                     UnitPrice = 6499,
                     UnitsInStock = 10,
                     Brand = "AMD",
-                    Description = "Sumergíte en la tecnología líder para gráficas con la arquitectura Graphics Core Next (GCN) de AMD. Esta tecnología de tercera generación activa las prestaciones avanzadas y el increíble rendimiento de las gráficas AMD Radeon",
-                    Image = "https://i.imgur.com/GJk8cpx.png",
+                    Description = "Procesador AMD A series de 7ma generación equipado con gráficos integrados. Incluye 2 núcleos 3.5 Ghz, Socket AM4, Caché 1 MB",
+                    Image = "https://i.imgur.com/etwcYDJ.png",
                     Url = "https://www.amd.com/es/products/apu/7th-gen-a6-9500-apu",
                     OnSale = false
                 },
@@ -191,12 +185,11 @@ namespace TopChoiceHardware.Products.AccessData
                     ProductId = 7,
                     ProductName = "Motherboard AM4 - Asrock B450M HDV 4.0",
                     CategoryId = 2,
-                    SupplierId = 1,
                     UnitPrice = 8999,
                     UnitsInStock = 10,
                     Brand = "Asrock",
-                    Description = "Soporta Socket AMD AM4 Ryzen™ 2000, 3000, 4000 G-Series, 5000 y 5000 G-Series Desktop Processors 2 DIMMs, Soporta memoria DDR4 3200 + (OC)",
-                    Image = "https://i.imgur.com/kgyIGNT.png",
+                    Description = "Socket AMD AM4 Ryzen™ 2000, 3000, 4000 G-Series, 5000 y 5000 G-Series Desktop Processors 2 RAM DIMMs DDR4 3200 + (OC)",
+                    Image = "",
                     Url = "https://www.asrock.com/mb/AMD/B450M-HDV%20R4.0/index.la.asp#Specification",
                     OnSale = false
                 },
@@ -205,11 +198,10 @@ namespace TopChoiceHardware.Products.AccessData
                      ProductId = 8,
                      ProductName = "Motherboard AM4 - Gigabyte GA-B550 AORUS ELITE AX V2",
                      CategoryId = 2,
-                     SupplierId = 1,
                      UnitPrice = 30999,
                      UnitsInStock = 10,
                      Brand = "AORUS",
-                     Description = "Supports AMD Ryzen™ 5000 Series / Ryzen™ 5000 G - Series / Ryzen™ 4000 G - Series and Ryzen™ 3000 Series Processors Dual Channel ECC / Non - ECC Unbuffered DDR4, 4 DIMMs",
+                     Description = "Socket AMD AM4 Ryzen™ 5000 Series / Ryzen™ 5000 G - Series / Ryzen™ 4000 G - Series and Ryzen™ 3000 Series Processors Dual Channel 4 DIMMs DDR4 ",
                      Image = "https://i.imgur.com/yjl0knB.png",
                      Url = "https://www.gigabyte.com/ar/Motherboard/B550-AORUS-ELITE-AX-V2-rev-10#kf",
                      OnSale = false
@@ -219,11 +211,10 @@ namespace TopChoiceHardware.Products.AccessData
                      ProductId = 9,
                      ProductName = "Motherboard AM4 - Asus Tuf X570-PLUS WIFI",
                      CategoryId = 2,
-                     SupplierId = 1,
                      UnitPrice = 34999,
                      UnitsInStock = 10,
                      Brand = "Asus TUF",
-                     Description = "Socket AMD AM4: Listo para los procesadores AMD RyzenTM de 2da y 3ra generación. 4 x DIMM, Max. 128GB, DDR4 4400(O.C)/3466(O.C.)/3400(O.C.)/3200(O.C.)/3000(O.C.)/2933(O.C.)/2800(O.C.)/2666/2400/2133",
+                     Description = "Socket AMD AM4: Listo para los procesadores AMD RyzenTM de 2da y 3ra generación. 4 x DIMM DDR4, Max. 128GB ",
                      Image = "https://i.imgur.com/4nmN1jo.png",
                      Url = "https://www.asus.com/latin/Motherboards-Components/Motherboards/TUF-Gaming/TUF-GAMING-X570-PLUS-WI-FI/",
                      OnSale = false
@@ -233,11 +224,10 @@ namespace TopChoiceHardware.Products.AccessData
                      ProductId = 10,
                      ProductName = "Motherboard AM4 - Msi A320M PRO VH",
                      CategoryId = 2,
-                     SupplierId = 1,
                      UnitPrice = 7499,
                      UnitsInStock = 10,
                      Brand = "MSI",
-                     Description = "AMD Socket AM4 , AMD® A320 Chipset, Supports DDR4 1866/ 2133/ 2400/ 2667/ 2800/ 2933/ 3000/ 3066/ 3200 MHz",
+                     Description = "Socket AMD AM4 , Soporta procesadores AMD® Ryzen™ 1ra y 2da Generación, 2 DIMMs DDR4",
                      Image = "https://i.imgur.com/SoVh1gC.png",
                      Url = "https://www.msi.com/Motherboard/A320M-PRO-VH",
                      OnSale = false
@@ -247,7 +237,6 @@ namespace TopChoiceHardware.Products.AccessData
                      ProductId = 11,
                      ProductName = "Memoria Ram DDR4 - 4Gb 3200 Mhz Beast Kingston Fury",
                      CategoryId = 3,
-                     SupplierId = 2,
                      UnitPrice = 4499,
                      UnitsInStock = 10,
                      Brand = "Kingston",
@@ -261,32 +250,184 @@ namespace TopChoiceHardware.Products.AccessData
                      ProductId = 12,
                      ProductName = "Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision",
                      CategoryId = 3,
-                     SupplierId = 2,
                      UnitPrice = 12500,
                      UnitsInStock = 10,
                      Brand = "Hikvision",
                      Description = "Capacidad de 16 GB, velocidad de 2666 MHz, tecnología  DDR4.",
-                     Image = "https://i.imgur.com/8xl51WL.png",
-                     Url = "",
+                     Url = "https://www.hikvision.com/es-la/",
                      OnSale = false
-                 }
-                );
-            modelBuilder.Entity<Image>(e =>
-            {
-                e.HasData(new Image
+                 },
+                 new Product
+                 {
+                     ProductId = 13,
+                     ProductName = "Seagate Barracuda 1TB",
+                     CategoryId = 4,
+                     UnitPrice = 5500,
+                     UnitsInStock = 10,
+                     Brand = "Seagate",
+                     Description = "Modelo: ST1000DM010 Interfaz: SATA de 6 Gb/s Capacidad: 1 TB Buffer: 64 MB Velocidad: 7200 RPM. De uso doméstico",
+                     Image = "",
+                     Url = "https://www.seagate.com/la/es/support/internal-hard-drives/desktop-hard-drives/barracuda-3-5/",
+                     OnSale = false
+                 },
+                 new Product
+                 {
+                     ProductId = 14,
+                     ProductName = "SSD Gigabyte 240GB",
+                     CategoryId = 4,
+                     UnitPrice = 4500,
+                     UnitsInStock = 10,
+                     Brand = "Seagate",
+                     Description = "Modelo: ST1000DM010 Interfaz: SATA de 6 Gb/s Capacidad: 1 TB Buffer: 64 MB Velocidad: 7200 RPM. De uso doméstico",
+                     Image = "",
+                     Url = "https://www.gigabyte.com/ar/Solid-State-Drive/GIGABYTE-SSD-256GB#kf",
+                     OnSale = false
+                 });
+            modelBuilder.Entity<Image>().HasData(
+                new Image
                 {
                     ImageId = 1,
-                    Url = "https://i.imgur.com/O1EfiHW.png",
+                    Url = "https://i.imgur.com/7hIMXzD.png",
                     ProductId = 1,
-                }); //Imagen 1 Ryzen 7 5700G
-                e.HasData(new Image
+                },//Imagen 1 Ryzen 7 5700G
+                new Image
                 {
                     ImageId = 2,
-                    Url = "https://i.imgur.com/cRSZLrc.png",
+                    Url = "https://i.imgur.com/RYEET6W.png",
                     ProductId = 1,
-                }); //Imagen 2 Ryzen 7 5700G
-            }
-            );
+                },//Imagen 2 Ryzen 7 5700G
+                new Image
+                {
+                    ImageId = 3,
+                    Url = "https://i.imgur.com/ZlfRxRX.png",
+                    ProductId = 1,
+                },//Imagen 3 Ryzen 7 5700G
+                new Image
+                {
+                    ImageId = 4,
+                    Url = "https://i.imgur.com/JHTHCvz.png",
+                    ProductId = 1,
+                },//Imagen 4 Ryzen 7 5700G
+                new Image
+                {
+                    ImageId = 5,
+                    Url = "https://i.imgur.com/pPCGtwD.png",
+                    ProductId = 2,
+                },//Imagen 1 Intel Core i5 10600KF
+                new Image
+                {
+                    ImageId = 6,
+                    Url = "https://i.imgur.com/PEWRhwg.png",
+                    ProductId = 2,
+                },//Imagen 2 Intel Core i5 10600KF
+                new Image
+                {
+                    ImageId = 7,
+                    Url = "https://i.imgur.com/PCh7GxO.png",
+                    ProductId = 2,
+                },//Imagen 3 Intel Core i5 10600KF
+                new Image
+                {
+                    ImageId = 8,
+                    Url = "https://i.imgur.com/Z2fJ6JD.png",
+                    ProductId = 2,
+                },//Imagen 4 Intel Core i5 10600KF
+                new Image
+                {
+                    ImageId = 9,
+                    Url = "https://i.imgur.com/UTodEaB.png",
+                    ProductId = 3,
+                },//Imagen 1 Intel Core i7 9700F
+                new Image
+                {
+                    ImageId = 10,
+                    Url = "https://i.imgur.com/RPnZ02l.png",
+                    ProductId = 3,
+                },//Imagen 2 Intel Core i7 9700F
+                new Image
+                {
+                    ImageId = 11,
+                    Url = "https://i.imgur.com/Rtpw8hA.png",
+                    ProductId = 3,
+                },//Imagen 3 Intel Core i7 9700F
+                new Image
+                {
+                    ImageId = 12,
+                    Url = "https://i.imgur.com/yWB9yD9.png",
+                    ProductId = 3,
+                },//Imagen 4 Intel Core i7 9700F
+                new Image
+                {
+                    ImageId = 13,
+                    Url = "https://i.imgur.com/Wy2kAhG.png",
+                    ProductId = 4,
+                },//Imagen 1 Ryzen 5 5600G
+                new Image
+                {
+                    ImageId = 14,
+                    Url = "https://i.imgur.com/niVhReS.png",
+                    ProductId = 4,
+                },//Imagen 2 Ryzen 5 5600G
+                new Image
+                {
+                    ImageId = 15,
+                    Url = "https://i.imgur.com/HHrAIAA.png",
+                    ProductId = 4,
+                },//Imagen 3 Ryzen 5 5600G
+                new Image
+                {
+                    ImageId = 16,
+                    Url = "https://i.imgur.com/tAeIvqD.png",
+                    ProductId = 4,
+                },//Imagen 4 Ryzen 5 5600G
+                new Image
+                {
+                    ImageId = 17,
+                    Url = "https://i.imgur.com/cDrubFC.png",
+                    ProductId = 5,
+                },//Imagen 1 Intel Core i3 10100
+                new Image
+                {
+                    ImageId = 18,
+                    Url = "https://i.imgur.com/2uBQPrT.png",
+                    ProductId = 5,
+                },//Imagen 2 Intel Core i3 10100
+                new Image
+                {
+                    ImageId = 19,
+                    Url = "https://i.imgur.com/yZVycHI.png",
+                    ProductId = 5,
+                },//Imagen 3 Intel Core i3 10100
+                new Image
+                {
+                    ImageId = 20,
+                    Url = "https://i.imgur.com/eRw8TDf.png",
+                    ProductId = 5,
+                },//Imagen 4 Intel Core i3 10100
+                new Image
+                {
+                    ImageId = 21,
+                    Url = "https://i.imgur.com/DBbZ0Mb.png",
+                    ProductId = 6,
+                },//Imagen 1 AMD a6 9500
+                new Image
+                {
+                    ImageId = 22,
+                    Url = "https://i.imgur.com/pzX4b0s.png",
+                    ProductId = 6,
+                },//Imagen 2 AMD a6 9500
+                new Image
+                {
+                    ImageId = 23,
+                    Url = "https://i.imgur.com/qz5UeSI.png",
+                    ProductId = 6,
+                },//Imagen 3 AMD a6 9500
+                new Image
+                {
+                    ImageId = 24,
+                    Url = "https://i.imgur.com/ZRHXXfj.png",
+                    ProductId = 6,
+                }); //Imagen 4 AMD a6 9500
         }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Product> Product { get; set; }

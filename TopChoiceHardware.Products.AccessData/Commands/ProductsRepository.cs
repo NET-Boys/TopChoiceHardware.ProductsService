@@ -91,19 +91,25 @@ namespace TopChoiceHardware.Products.AccessData.Commands
                 }
             }
             return listproductDtoForDisplays;
-        } //Codigo repetido para no hacer consultas anidadas a la DB
-        public List<ProductDtoForDisplay> GetAllProductDtoForDisplayBySupplierId(int supplierId)
+        }
+        public List<ProductDtoForDisplay> ApplyLikeParameterToList(string likeParameter, List<ProductDtoForDisplay> productDtoList)
         {
-            var listproductDtoForDisplays = new List<ProductDtoForDisplay>();
-            foreach (var product in GetAllProducts())
+            return productDtoList.Where(product => product.ProductName.ToLower().Contains(likeParameter.ToLower())).ToList();
+            //contains funciona por defecto como si tuviera los % al principio y final
+        }
+        public List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList)
+        {
+            if (order == "ASC")
             {
-                if (product.SupplierId == supplierId)
-                {
-                    listproductDtoForDisplays.Add(GetProductDtoForDisplayById(product.ProductId));
-                }
+                productDtoList = productDtoList.OrderBy(product => product.UnitPrice).ToList();
             }
-            return listproductDtoForDisplays;
-        } //Codigo repetido para no hacer consultas anidadas a la DB
+            if (order == "DESC")
+            {
+                productDtoList = productDtoList.OrderByDescending(product => product.UnitPrice).ToList();
+            }
+            return productDtoList;
+        }
+
         public void Update(Product product)
         {
             _context.Product.Update(product);

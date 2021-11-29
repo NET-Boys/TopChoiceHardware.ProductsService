@@ -15,7 +15,9 @@ namespace TopChoiceHardware.Products.Domain.Commands
         void Delete(Product product);
         void DeleteById(int id);
         List<ProductDtoForDisplay> GetAllProductDtoForDisplayByCategoryId(int categoryId);
-        List<ProductDtoForDisplay> GetAllProductDtoForDisplayBySupplierId(int supplierId);
         List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order);
+        List<ProductDtoForDisplay> ApplyLikeParameterToList(string likeParameter, List<ProductDtoForDisplay> productDtoList);
+        List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList);
+
     }
 }

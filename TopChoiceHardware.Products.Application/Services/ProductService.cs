@@ -15,8 +15,10 @@ namespace TopChoiceHardware.Products.Application.Services
         ProductDtoForDisplay GetProductDtoForDisplayById(int productId);
         List<ProductDtoForDisplay> GetAllProductDtoForDisplay();
         List<ProductDtoForDisplay> GetAllProductDtoForDisplayByCategoryId(int categoryId);
-        List<ProductDtoForDisplay> GetAllProductDtoForDisplaysBySupplierId(int supplierId);
         List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order);
+        List<ProductDtoForDisplay> ApplyLikeParameterToList(string likeParameter, List<ProductDtoForDisplay> productDtoList);
+
+        List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList);
     }
     public class ProductService : IProductService
     {
@@ -69,13 +71,17 @@ namespace TopChoiceHardware.Products.Application.Services
         {
             return _repository.GetAllProductDtoForDisplayByCategoryId(categoryId);
         }
-        public List<ProductDtoForDisplay> GetAllProductDtoForDisplaysBySupplierId(int supplierId)
-        {
-            return _repository.GetAllProductDtoForDisplayBySupplierId(supplierId);
-        }
         public List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order)
         {
             return _repository.GetProductDtoForDisplaysSortedByUnitPrice(order);
+        }
+        public List<ProductDtoForDisplay> ApplyLikeParameterToList(string likeParameter, List<ProductDtoForDisplay> productDtoList)
+        {
+            return _repository.ApplyLikeParameterToList(likeParameter, productDtoList);
+        }
+        public List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList)
+        {
+            return _repository.SortListOfProductsDto(order, productDtoList);
         }
     }
 }

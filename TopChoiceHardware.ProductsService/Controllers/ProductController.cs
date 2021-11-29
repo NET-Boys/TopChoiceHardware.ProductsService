@@ -6,6 +6,7 @@ using TopChoiceHardware.Products.Application.Services;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
 
 namespace TopChoiceHardware.ProductsService.Controllers
 {
@@ -40,32 +41,34 @@ namespace TopChoiceHardware.ProductsService.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult GetAllProducts(string order=null)
+        public IActionResult GetAllProducts(string order = null, string titulo = null, int? categoryId=null)
         {
             try
             {
-                if (order != null)
+                List<ProductDtoForDisplay> listProductsDto;
+                if (categoryId !=null)
                 {
-                    var ListProductsDto = _service.GetProductDtoForDisplaysSortedByUnitPrice(order);
-
-                    if (ListProductsDto == null)
-                    {
-                        return new JsonResult(new ProductNotFoundResponse()) { StatusCode = 404 };
-                    }
-
-                    return Ok(ListProductsDto);
-                }
+                    listProductsDto = _service.GetAllProductDtoForDisplayByCategoryId(categoryId.Value);
+                }//Trae segun categorias
                 else
                 {
-                    var productos = _service.GetAllProductDtoForDisplay();
+                    listProductsDto = _service.GetAllProductDtoForDisplay();
+                }//Trae todo si no se especifica categoria
 
-                    return Ok(productos);
-                }
+                if (titulo!=null && titulo.Length >= 3)
+                {
+                    listProductsDto = _service.ApplyLikeParameterToList(titulo, listProductsDto);
+                } //Si se especifico un titulo, trae aquellos que cumplan el titulo especificado
+                
+                if (order!= null)
+                {
+                    listProductsDto = _service.SortListOfProductsDto(order,listProductsDto);
+                } //Si se especifica un orden la ordena
 
+                return Ok(listProductsDto);
             }
             catch (Exception)
             {
-
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -98,25 +101,6 @@ namespace TopChoiceHardware.ProductsService.Controllers
             try
             {
                 var productDto = _service.GetAllProductDtoForDisplayByCategoryId(categoryId);
-
-                if (productDto == null)
-                {
-                    return new JsonResult(new ProductNotFoundResponse()) { StatusCode = 404 };
-                }
-                return Ok(productDto);
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Internal server error");
-            }
-        }
-        [HttpGet("supplier/{supplierId}")]
-        [AllowAnonymous]
-        public IActionResult GetProductBySupplierId(int supplierId)
-        {
-            try
-            {
-                var productDto = _service.GetAllProductDtoForDisplaysBySupplierId(supplierId);
 
                 if (productDto == null)
                 {

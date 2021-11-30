@@ -9,7 +9,7 @@ using TopChoiceHardware.Products.AccessData;
 namespace TopChoiceHardware.Products.AccessData.Migrations
 {
     [DbContext(typeof(ProductsContext))]
-    [Migration("20211129083230_Init")]
+    [Migration("20211130165842_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -239,6 +239,198 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             ImageId = 24,
                             ProductId = 6,
                             Url = "https://i.imgur.com/ZRHXXfj.png"
+                        },
+                        new
+                        {
+                            ImageId = 25,
+                            ProductId = 7,
+                            Url = "https://i.imgur.com/QiD4m80.png"
+                        },
+                        new
+                        {
+                            ImageId = 26,
+                            ProductId = 7,
+                            Url = "https://i.imgur.com/tEVgQg6.png"
+                        },
+                        new
+                        {
+                            ImageId = 27,
+                            ProductId = 7,
+                            Url = "https://i.imgur.com/e3A5Y39.png"
+                        },
+                        new
+                        {
+                            ImageId = 28,
+                            ProductId = 7,
+                            Url = "https://i.imgur.com/bSv1zdZ.png"
+                        },
+                        new
+                        {
+                            ImageId = 29,
+                            ProductId = 8,
+                            Url = "https://i.imgur.com/lanfcBR.png"
+                        },
+                        new
+                        {
+                            ImageId = 30,
+                            ProductId = 8,
+                            Url = "https://i.imgur.com/Gh8QFgB.png"
+                        },
+                        new
+                        {
+                            ImageId = 31,
+                            ProductId = 8,
+                            Url = "https://i.imgur.com/4FFWiuf.png"
+                        },
+                        new
+                        {
+                            ImageId = 32,
+                            ProductId = 8,
+                            Url = "https://i.imgur.com/ewuljgX.png"
+                        },
+                        new
+                        {
+                            ImageId = 33,
+                            ProductId = 9,
+                            Url = "https://i.imgur.com/OsWivOs.png"
+                        },
+                        new
+                        {
+                            ImageId = 34,
+                            ProductId = 9,
+                            Url = "https://i.imgur.com/39y2gH3.png"
+                        },
+                        new
+                        {
+                            ImageId = 35,
+                            ProductId = 9,
+                            Url = "https://i.imgur.com/ovhu6lx.png"
+                        },
+                        new
+                        {
+                            ImageId = 36,
+                            ProductId = 9,
+                            Url = "https://i.imgur.com/uRVrFoJ.png"
+                        },
+                        new
+                        {
+                            ImageId = 37,
+                            ProductId = 10,
+                            Url = "https://i.imgur.com/l3vgS6c.png"
+                        },
+                        new
+                        {
+                            ImageId = 38,
+                            ProductId = 10,
+                            Url = "https://i.imgur.com/2YGPcdD.png"
+                        },
+                        new
+                        {
+                            ImageId = 39,
+                            ProductId = 10,
+                            Url = "https://i.imgur.com/YZJDPPS.png"
+                        },
+                        new
+                        {
+                            ImageId = 40,
+                            ProductId = 10,
+                            Url = "https://i.imgur.com/ohrAcNY.png"
+                        },
+                        new
+                        {
+                            ImageId = 41,
+                            ProductId = 11,
+                            Url = "https://i.imgur.com/C0RjbtQ.png"
+                        },
+                        new
+                        {
+                            ImageId = 42,
+                            ProductId = 11,
+                            Url = "https://i.imgur.com/X14tRUk.png"
+                        },
+                        new
+                        {
+                            ImageId = 43,
+                            ProductId = 11,
+                            Url = "https://i.imgur.com/lPNNJkG.png"
+                        },
+                        new
+                        {
+                            ImageId = 44,
+                            ProductId = 11,
+                            Url = "https://i.imgur.com/nw7jeAI.png"
+                        },
+                        new
+                        {
+                            ImageId = 45,
+                            ProductId = 12,
+                            Url = "https://i.imgur.com/ItE432j.png"
+                        },
+                        new
+                        {
+                            ImageId = 46,
+                            ProductId = 12,
+                            Url = "https://i.imgur.com/zNf7Ek5.png"
+                        },
+                        new
+                        {
+                            ImageId = 47,
+                            ProductId = 12,
+                            Url = "https://i.imgur.com/WnDpaXG.png"
+                        },
+                        new
+                        {
+                            ImageId = 48,
+                            ProductId = 12,
+                            Url = "https://i.imgur.com/rcK6VEW.png"
+                        },
+                        new
+                        {
+                            ImageId = 49,
+                            ProductId = 13,
+                            Url = "https://i.imgur.com/RS4cwAD.png"
+                        },
+                        new
+                        {
+                            ImageId = 50,
+                            ProductId = 13,
+                            Url = "https://i.imgur.com/8qjZ41t.png"
+                        },
+                        new
+                        {
+                            ImageId = 51,
+                            ProductId = 13,
+                            Url = "https://i.imgur.com/kG7R1EJ.png"
+                        },
+                        new
+                        {
+                            ImageId = 52,
+                            ProductId = 13,
+                            Url = "https://i.imgur.com/rbUbbcd.png"
+                        },
+                        new
+                        {
+                            ImageId = 53,
+                            ProductId = 14,
+                            Url = "https://i.imgur.com/mcP0luK.png"
+                        },
+                        new
+                        {
+                            ImageId = 54,
+                            ProductId = 14,
+                            Url = "https://i.imgur.com/Tjc0xVB.png"
+                        },
+                        new
+                        {
+                            ImageId = 55,
+                            ProductId = 14,
+                            Url = "https://i.imgur.com/YsH84Bu.png"
+                        },
+                        new
+                        {
+                            ImageId = 56,
+                            ProductId = 14,
+                            Url = "https://i.imgur.com/Pd4jqhi.png"
                         });
                 });
 
@@ -380,7 +572,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             Brand = "Asrock",
                             CategoryId = 2,
                             Description = "Socket AMD AM4 Ryzen™ 2000, 3000, 4000 G-Series, 5000 y 5000 G-Series Desktop Processors 2 RAM DIMMs DDR4 3200 + (OC)",
-                            Image = "",
+                            Image = "https://i.imgur.com/U7fAUnj.png",
                             OnSale = false,
                             ProductName = "Motherboard AM4 - Asrock B450M HDV 4.0",
                             SupplierId = 0,
@@ -442,7 +634,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             SupplierId = 0,
                             UnitPrice = 4499m,
                             UnitsInStock = 10,
-                            Url = ""
+                            Url = "https://www.kingston.com/es/memory/gaming/kingston-fury-beast-ddr4-memory"
                         },
                         new
                         {
@@ -450,6 +642,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             Brand = "Hikvision",
                             CategoryId = 3,
                             Description = "Capacidad de 16 GB, velocidad de 2666 MHz, tecnología  DDR4.",
+                            Image = "https://i.imgur.com/wdk29Tl.png",
                             OnSale = false,
                             ProductName = "Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision",
                             SupplierId = 0,
@@ -463,7 +656,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             Brand = "Seagate",
                             CategoryId = 4,
                             Description = "Modelo: ST1000DM010 Interfaz: SATA de 6 Gb/s Capacidad: 1 TB Buffer: 64 MB Velocidad: 7200 RPM. De uso doméstico",
-                            Image = "",
+                            Image = "https://i.imgur.com/bahey2J.png",
                             OnSale = false,
                             ProductName = "Seagate Barracuda 1TB",
                             SupplierId = 0,
@@ -477,7 +670,7 @@ namespace TopChoiceHardware.Products.AccessData.Migrations
                             Brand = "Seagate",
                             CategoryId = 4,
                             Description = "Modelo: ST1000DM010 Interfaz: SATA de 6 Gb/s Capacidad: 1 TB Buffer: 64 MB Velocidad: 7200 RPM. De uso doméstico",
-                            Image = "",
+                            Image = "https://i.imgur.com/VcSspi5.png",
                             OnSale = false,
                             ProductName = "SSD Gigabyte 240GB",
                             SupplierId = 0,

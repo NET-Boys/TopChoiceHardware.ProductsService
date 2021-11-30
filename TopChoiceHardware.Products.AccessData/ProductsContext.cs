@@ -189,7 +189,7 @@ namespace TopChoiceHardware.Products.AccessData
                     UnitsInStock = 10,
                     Brand = "Asrock",
                     Description = "Socket AMD AM4 Ryzen™ 2000, 3000, 4000 G-Series, 5000 y 5000 G-Series Desktop Processors 2 RAM DIMMs DDR4 3200 + (OC)",
-                    Image = "",
+                    Image = "https://i.imgur.com/U7fAUnj.png",
                     Url = "https://www.asrock.com/mb/AMD/B450M-HDV%20R4.0/index.la.asp#Specification",
                     OnSale = false
                 },
@@ -242,7 +242,7 @@ namespace TopChoiceHardware.Products.AccessData
                      Brand = "Kingston",
                      Description = "Capacidad de 4 GB, velocidad de 3200 MHz, tecnología  DDR4.",
                      Image = "https://i.imgur.com/5Qx2cpJ.png",
-                     Url = "",
+                     Url = "https://www.kingston.com/es/memory/gaming/kingston-fury-beast-ddr4-memory",
                      OnSale = false
                  },
                  new Product
@@ -253,6 +253,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitPrice = 12500,
                      UnitsInStock = 10,
                      Brand = "Hikvision",
+                     Image = "https://i.imgur.com/wdk29Tl.png",
                      Description = "Capacidad de 16 GB, velocidad de 2666 MHz, tecnología  DDR4.",
                      Url = "https://www.hikvision.com/es-la/",
                      OnSale = false
@@ -266,7 +267,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "Seagate",
                      Description = "Modelo: ST1000DM010 Interfaz: SATA de 6 Gb/s Capacidad: 1 TB Buffer: 64 MB Velocidad: 7200 RPM. De uso doméstico",
-                     Image = "",
+                     Image = "https://i.imgur.com/bahey2J.png",
                      Url = "https://www.seagate.com/la/es/support/internal-hard-drives/desktop-hard-drives/barracuda-3-5/",
                      OnSale = false
                  },
@@ -279,7 +280,7 @@ namespace TopChoiceHardware.Products.AccessData
                      UnitsInStock = 10,
                      Brand = "Seagate",
                      Description = "Modelo: ST1000DM010 Interfaz: SATA de 6 Gb/s Capacidad: 1 TB Buffer: 64 MB Velocidad: 7200 RPM. De uso doméstico",
-                     Image = "",
+                     Image = "https://i.imgur.com/VcSspi5.png",
                      Url = "https://www.gigabyte.com/ar/Solid-State-Drive/GIGABYTE-SSD-256GB#kf",
                      OnSale = false
                  });
@@ -427,7 +428,199 @@ namespace TopChoiceHardware.Products.AccessData
                     ImageId = 24,
                     Url = "https://i.imgur.com/ZRHXXfj.png",
                     ProductId = 6,
-                }); //Imagen 4 AMD a6 9500
+                },//Imagen 4 AMD a6 9500
+                new Image
+                {
+                    ImageId = 25,
+                    Url = "https://i.imgur.com/QiD4m80.png",
+                    ProductId = 7,
+                }, //Imagen 1 AM4 Asrock B450M HDV 4.0
+                new Image
+                {
+                    ImageId = 26,
+                    Url = "https://i.imgur.com/tEVgQg6.png",
+                    ProductId = 7,
+                }, //Imagen 2 AM4 Asrock B450M HDV 4.0
+                new Image
+                {
+                    ImageId = 27,
+                    Url = "https://i.imgur.com/e3A5Y39.png",
+                    ProductId = 7,
+                }, //Imagen 3 AM4 Asrock B450M HDV 4.0
+                new Image
+                {
+                    ImageId = 28,
+                    Url = "https://i.imgur.com/bSv1zdZ.png",
+                    ProductId = 7,
+                }, //Imagen 4 AM4 Asrock B450M HDV 4.0
+                new Image
+                {
+                    ImageId = 29,
+                    Url = "https://i.imgur.com/lanfcBR.png",
+                    ProductId = 8,
+                }, //Imagen 1 AM4 - Gigabyte GA-B550 AORUS ELITE AX V2
+                new Image
+                {
+                    ImageId = 30,
+                    Url = "https://i.imgur.com/Gh8QFgB.png",
+                    ProductId = 8,
+                }, //Imagen 2 AM4 - Gigabyte GA-B550 AORUS ELITE AX V2
+                new Image
+                {
+                    ImageId = 31,
+                    Url = "https://i.imgur.com/4FFWiuf.png",
+                    ProductId = 8,
+                }, //Imagen 3 AM4 - Gigabyte GA-B550 AORUS ELITE AX V2
+                new Image
+                {
+                    ImageId = 32,
+                    Url = "https://i.imgur.com/ewuljgX.png",
+                    ProductId = 8,
+                }, //Imagen 4 AM4 - Gigabyte GA-B550 AORUS ELITE AX V2
+                new Image
+                {
+                    ImageId = 33,
+                    Url = "https://i.imgur.com/OsWivOs.png",
+                    ProductId = 9,
+                }, //Imagen 1 Motherboard AM4 - Asus Tuf X570-PLUS WIFI
+                new Image
+                {
+                    ImageId = 34,
+                    Url = "https://i.imgur.com/39y2gH3.png",
+                    ProductId = 9,
+                }, //Imagen 2 Motherboard AM4 - Asus Tuf X570-PLUS WIFI
+                new Image
+                {
+                    ImageId = 35,
+                    Url = "https://i.imgur.com/ovhu6lx.png",
+                    ProductId = 9,
+                }, //Imagen 3 Motherboard AM4 - Asus Tuf X570-PLUS WIFI
+                new Image
+                {
+                    ImageId = 36,
+                    Url = "https://i.imgur.com/uRVrFoJ.png",
+                    ProductId = 9,
+                },//Imagen 4 Motherboard AM4 - Asus Tuf X570-PLUS WIFI
+                new Image
+                {
+                    ImageId = 37,
+                    Url = "https://i.imgur.com/l3vgS6c.png",
+                    ProductId = 10,
+                }, //Imagen 1 AM4 - Msi A320M PRO VH
+                new Image
+                {
+                    ImageId = 38,
+                    Url = "https://i.imgur.com/2YGPcdD.png",
+                    ProductId = 10,
+                }, //Imagen 2 AM4 - Msi A320M PRO VH
+                new Image
+                {
+                    ImageId = 39,
+                    Url = "https://i.imgur.com/YZJDPPS.png",
+                    ProductId = 10,
+                }, //Imagen 3 AM4 - Msi A320M PRO VH
+                new Image
+                {
+                    ImageId = 40,
+                    Url = "https://i.imgur.com/ohrAcNY.png",
+                    ProductId = 10,
+                }, //Imagen 4 AM4 - Msi A320M PRO VH
+                new Image
+                {
+                    ImageId = 41,
+                    Url = "https://i.imgur.com/C0RjbtQ.png",
+                    ProductId = 11,
+                }, //Imagen 1 Memoria Ram DDR4 - 4Gb 3200 Mhz Beast Kingston Fury
+                new Image
+                {
+                    ImageId = 42,
+                    Url = "https://i.imgur.com/X14tRUk.png",
+                    ProductId = 11,
+                }, //Imagen 2 Memoria Ram DDR4 - 4Gb 3200 Mhz Beast Kingston Fury
+                new Image
+                {
+                    ImageId = 43,
+                    Url = "https://i.imgur.com/lPNNJkG.png",
+                    ProductId = 11,
+                }, //Imagen 3 Memoria Ram DDR4 - 4Gb 3200 Mhz Beast Kingston Fury
+                new Image
+                {
+                    ImageId = 44,
+                    Url = "https://i.imgur.com/nw7jeAI.png",
+                    ProductId = 11,
+                }, //Imagen 4 Memoria Ram DDR4 - 4Gb 3200 Mhz Beast Kingston Fury
+                new Image
+                {
+                    ImageId = 45,
+                    Url = "https://i.imgur.com/ItE432j.png",
+                    ProductId = 12,
+                },//Imagen 1 Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision
+                new Image
+                {
+                    ImageId = 46,
+                    Url = "https://i.imgur.com/zNf7Ek5.png",
+                    ProductId = 12,
+                },//Imagen 2 Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision
+                new Image
+                {
+                    ImageId = 47,
+                    Url = "https://i.imgur.com/WnDpaXG.png",
+                    ProductId = 12,
+                },//Imagen 3 Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision
+                new Image
+                {
+                    ImageId = 48,
+                    Url = "https://i.imgur.com/rcK6VEW.png",
+                    ProductId = 12,
+                },//Imagen 4 Memoria Ram DDR4 - 16Gb 2666 Mhz Value Hikvision
+                new Image
+                {
+                    ImageId = 49,
+                    Url = "https://i.imgur.com/RS4cwAD.png",
+                    ProductId = 13,
+                },//Imagen 1 Seagate Barracuda 1TB
+                new Image
+                {
+                    ImageId = 50,
+                    Url = "https://i.imgur.com/8qjZ41t.png",
+                    ProductId = 13,
+                },//Imagen 2 Seagate Barracuda 1TB
+                new Image
+                {
+                    ImageId = 51,
+                    Url = "https://i.imgur.com/kG7R1EJ.png",
+                    ProductId = 13,
+                },//Imagen 3 Seagate Barracuda 1TB
+                new Image
+                {
+                    ImageId = 52,
+                    Url = "https://i.imgur.com/rbUbbcd.png",
+                    ProductId = 13,
+                },//Imagen 4 Seagate Barracuda 1TB
+                new Image
+                {
+                    ImageId = 53,
+                    Url = "https://i.imgur.com/mcP0luK.png",
+                    ProductId = 14,
+                },// Imagen 1 SSD Gigabyte 240GB
+                new Image
+                {
+                    ImageId = 54,
+                    Url = "https://i.imgur.com/Tjc0xVB.png",
+                    ProductId = 14,
+                },// Imagen 2 SSD Gigabyte 240GB
+                new Image
+                {
+                    ImageId = 55,
+                    Url = "https://i.imgur.com/YsH84Bu.png",
+                    ProductId = 14,
+                },// Imagen 3 SSD Gigabyte 240GB
+                new Image
+                {
+                    ImageId = 56,
+                    Url = "https://i.imgur.com/Pd4jqhi.png",
+                    ProductId = 14,
+                });// Imagen 4 SSD Gigabyte 240GB
         }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Product> Product { get; set; }

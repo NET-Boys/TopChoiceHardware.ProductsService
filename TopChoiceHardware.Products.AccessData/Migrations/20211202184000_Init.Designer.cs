@@ -9,7 +9,7 @@ using TopChoiceHardware.Products.AccessData;
 namespace TopChoiceHardware.Products.AccessData.Migrations
 {
     [DbContext(typeof(ProductsContext))]
-    [Migration("20211130165842_Init")]
+    [Migration("20211202184000_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

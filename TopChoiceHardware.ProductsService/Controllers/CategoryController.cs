@@ -36,6 +36,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult GetAllCategories()
         {
             try
@@ -52,6 +53,7 @@ namespace TopChoiceHardware.ProductsService.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public IActionResult GetCategoryById(int id)
         {
             try

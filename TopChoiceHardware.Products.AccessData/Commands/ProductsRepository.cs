@@ -127,5 +127,11 @@ namespace TopChoiceHardware.Products.AccessData.Commands
             _context.Product.Remove(product);
             _context.SaveChanges();
         }
+
+        public void ReducirStock(Product producto)
+        {
+            _context.Product.Find(producto.ProductId).UnitsInStock = producto.UnitsInStock;
+            _context.SaveChanges();
+        }
     }
 }

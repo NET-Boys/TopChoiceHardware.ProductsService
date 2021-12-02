@@ -18,6 +18,6 @@ namespace TopChoiceHardware.Products.Domain.Commands
         List<ProductDtoForDisplay> GetProductDtoForDisplaysSortedByUnitPrice(string order);
         List<ProductDtoForDisplay> ApplyLikeParameterToList(string likeParameter, List<ProductDtoForDisplay> productDtoList);
         List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList);
-
+        void ReducirStock(Product producto);
     }
 }

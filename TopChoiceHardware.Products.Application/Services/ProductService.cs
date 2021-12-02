@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
+using System.Linq;
 using TopChoiceHardware.Products.Domain.Commands;
 using TopChoiceHardware.Products.Domain.DTOs;
 using TopChoiceHardware.Products.Domain.Entities;
@@ -19,6 +20,8 @@ namespace TopChoiceHardware.Products.Application.Services
         List<ProductDtoForDisplay> ApplyLikeParameterToList(string likeParameter, List<ProductDtoForDisplay> productDtoList);
 
         List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList);
+
+        StockResponse ReduceStock(List<ProductStockDto> orden);
     }
     public class ProductService : IProductService
     {
@@ -82,6 +85,54 @@ namespace TopChoiceHardware.Products.Application.Services
         public List<ProductDtoForDisplay> SortListOfProductsDto(string order, List<ProductDtoForDisplay> productDtoList)
         {
             return _repository.SortListOfProductsDto(order, productDtoList);
+        }
+
+        public StockResponse ReduceStock(List<ProductStockDto> orden)
+        {
+            var allProductos = new List<Product>();
+
+            foreach(var producto in _repository.GetAllProducts())
+            {
+                foreach(var dto in orden)
+                {
+                    if(producto.ProductId == dto.ProductId)
+                    {
+                        allProductos.Add(producto);
+                    }
+                }
+            }
+
+            foreach(var producto in allProductos)
+            {
+                foreach(var dto in orden)
+                {
+                    if(producto.UnitsInStock < dto.Cantidad)
+                    {
+                        var response = new StockResponse
+                        {
+                            Message = "No se puede completar la orden, no se dispone de stock",
+                            Status = "Fail"
+                        };
+
+                        return response;
+                    }
+                }
+            }
+
+            foreach(var item in orden)
+            {
+                var producto = GetProductById(item.ProductId);
+                producto.UnitsInStock -= item.Cantidad;
+                _repository.ReducirStock(producto);
+            }
+
+            var respuesta = new StockResponse
+            {
+                Message = "Se completó la transacción exitosamente",
+                Status = "Success"
+            };
+
+            return respuesta;
         }
     }
 }

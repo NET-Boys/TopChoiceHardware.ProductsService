@@ -136,5 +136,18 @@ namespace TopChoiceHardware.ProductsService.Controllers
 
             return NoContent();
         }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [AllowAnonymous]
+        [Route("order")]
+        public IActionResult ReduceStock([FromBody]List<ProductStockDto> productos) 
+        {
+            var response = _service.ReduceStock(productos);
+
+            return new JsonResult(response) { StatusCode = 201 };
+        }
     }
 }

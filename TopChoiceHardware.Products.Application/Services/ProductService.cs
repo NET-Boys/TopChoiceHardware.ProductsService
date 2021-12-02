@@ -102,24 +102,28 @@ namespace TopChoiceHardware.Products.Application.Services
                 }
             }
 
-            foreach(var producto in allProductos)
+            foreach (var producto in allProductos)
             {
-                foreach(var dto in orden)
+                foreach (var dto in orden)
                 {
-                    if(producto.UnitsInStock < dto.Cantidad)
+                    if (producto.ProductId == dto.ProductId)
                     {
-                        var response = new StockResponse
+                        if (producto.UnitsInStock < dto.Cantidad)
                         {
-                            Message = "No se puede completar la orden, no se dispone de stock",
-                            Status = "Fail"
-                        };
+                            var response = new StockResponse
+                            {
+                                Message = "No se puede completar la orden, no se dispone de stock",
+                                Status = "Fail"
+                            };
 
-                        return response;
+                            return response;
+                        }
                     }
+
                 }
             }
 
-            foreach(var item in orden)
+            foreach (var item in orden)
             {
                 var producto = GetProductById(item.ProductId);
                 producto.UnitsInStock -= item.Cantidad;
